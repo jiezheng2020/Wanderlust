@@ -1,26 +1,29 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  class Group extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+  const Group = sequelize.define(
+    "Group",
+    {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [3, 100],
+        },
+      },
+      location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [3, 100],
+        },
+      },
+      organizerId: { type: DataTypes.INTEGER, allowNull: false },
+      description: { type: DataTypes.TEXT, allowNull: false },
+    },
+    {}
+  );
+  Group.associate = function (models) {
+    // associations can be defined here
   };
-  Group.init({
-    name: DataTypes.STRING,
-    location: DataTypes.STRING,
-    organizerId: DataTypes.INTEGER,
-    description: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Group',
-  });
   return Group;
 };

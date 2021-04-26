@@ -1,25 +1,15 @@
 "use strict";
-const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class GroupMember extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  GroupMember.init(
+  const GroupMember = sequelize.define(
+    "GroupMember",
     {
-      groupId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
+      groupId: { type: DataTypes.INTEGER, allowNull: false },
+      userId: { type: DataTypes.INTEGER, allowNull: false },
     },
-    {
-      sequelize,
-      modelName: "GroupMember",
-    }
+    {}
   );
+  GroupMember.associate = function (models) {
+    // associations can be defined here
+  };
   return GroupMember;
 };

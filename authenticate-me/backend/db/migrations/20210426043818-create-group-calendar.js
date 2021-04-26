@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("GroupCalendars", {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("GroupCalendars", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,22 +11,26 @@ module.exports = {
       eventId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: "Events" },
       },
       groupId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: "Groups" },
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("GroupCalendars");
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("GroupCalendars");
   },
 };

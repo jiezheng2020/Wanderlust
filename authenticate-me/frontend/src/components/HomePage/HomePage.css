@@ -61,14 +61,29 @@
 }
 .event-container a {
   margin-top: 0.3rem;
+  font-size: 19px;
   color: #2f8ba2;
 }
 .event-links {
   width: 22vw;
   height: 22vh;
   border-radius: 15px;
-  background-color: red;
-  border: solid white;
+}
+
+.event1 {
+  background-image: url("./event1.jpg");
+  background-size: cover;
+  background-repeat: none;
+}
+.event2 {
+  background-image: url("./event2.jpg");
+  background-size: cover;
+  background-repeat: none;
+}
+.event3 {
+  background-image: url("./event3.jpg");
+  background-size: cover;
+  background-repeat: none;
 }
 
 .home-intro {

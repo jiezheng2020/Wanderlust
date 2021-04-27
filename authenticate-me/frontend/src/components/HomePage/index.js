@@ -29,15 +29,15 @@ export default function HomePage() {
       <div className="home-links">
         <div className="link-containers">
           <div className="event-container">
-            <div className="event-links"></div>
+            <div className="event-links event1"></div>
             <Link to="/">Make new friends</Link>
           </div>
           <div className="event-container">
-            <div className="event-links"></div>
+            <div className="event-links event2"></div>
             <Link to="/">Explore the outdoors</Link>
           </div>
           <div className="event-container">
-            <div className="event-links"></div>
+            <div className="event-links event3"></div>
             <Link to="/">Explore the nightlife</Link>
           </div>
         </div>

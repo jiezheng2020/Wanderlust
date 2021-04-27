@@ -29,7 +29,7 @@ function LoginFormPage() {
       <form onSubmit={handleSubmit}>
         <div className="login-box">
           <div className="login-label">
-            <label>Log in</label>
+            <label>Log In</label>
           </div>
           <div className="login-fields">
             <label>Username or Email Address</label>
@@ -50,7 +50,7 @@ function LoginFormPage() {
             />
           </div>
           <button className="loginform-btn" type="submit">
-            Log In
+            Log in
           </button>
         </div>
         <div className="login-errors">

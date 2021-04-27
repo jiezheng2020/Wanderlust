@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   EventAttendee.associate = function (models) {
     EventAttendee.belongsTo(models.Event, { foreignKey: "eventId" });
-    EventAttendee.belongsTo(models.EventAttendees, { foreignKey: "userId" });
+    EventAttendee.belongsTo(models.User, { foreignKey: "userId" });
   };
   return EventAttendee;
 };

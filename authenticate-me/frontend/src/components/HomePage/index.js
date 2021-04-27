@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
+import { Modal } from "../../context/Modal";
+import SignupForm from "../SignupFormModal/SignupForm";
 import "./HomePage.css";
 
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false);
+
   const sessionUser = useSelector((state) => state.session.user);
 
   if (sessionUser) return <Redirect to="/authorized"></Redirect>;
@@ -42,7 +46,40 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="home-intro">This is Home Wanderlust works</div>
+      <div className="home-intro">
+        <div className="intro-title">
+          <h1>How Wanderlust Works</h1>
+          <h3>
+            Meet others who share your interest and attend events. It's free to
+            create an account
+          </h3>
+        </div>
+        <div className="intro-link-containers">
+          <div className="link-container">
+            <div className="link-image">Image</div>
+            <Link to="/">Click Me</Link>
+            <p>More Text</p>
+          </div>
+          <div className="link-container">
+            <div className="link-image">Image</div>
+            <Link to="/">Click Me</Link>
+            <p>More Text</p>
+          </div>
+          <div className="link-container">
+            <div className="link-image">Image</div>
+            <Link to="/">Click Me</Link>
+            <p>More Text</p>
+          </div>
+        </div>
+        <button className="join-btn" onClick={() => setShowModal(true)}>
+          Join Wanderlust
+        </button>
+        {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <SignupForm />
+          </Modal>
+        )}
+      </div>
     </div>
   );
 }

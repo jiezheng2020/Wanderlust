@@ -87,6 +87,10 @@
 }
 
 .home-intro {
+  background-color: #f6f6f6;
   width: 100vw;
-  height: 60vh;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

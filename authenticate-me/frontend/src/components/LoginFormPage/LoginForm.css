@@ -1,7 +1,7 @@
 .login-page {
   display: flex;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-image: url("./login.jpg");
   background-size: cover;
   justify-content: center;
@@ -13,8 +13,8 @@
   border: solid gray;
   background-color: white;
   flex-direction: column;
-  width: 546px;
-  height: 398px;
+  width: 25vw;
+  height: 40vh;
   align-items: center;
 }
 

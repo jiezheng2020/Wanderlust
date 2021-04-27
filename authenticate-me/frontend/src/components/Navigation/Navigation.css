@@ -2,8 +2,12 @@
 
 .navbar {
   display: flex;
-  position: 0;
-  margin: 0;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
   width: 100vw;
   justify-content: space-between;
   align-items: center;

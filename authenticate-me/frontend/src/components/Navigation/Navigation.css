@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .navbar {
-  display: flex;
   position: fixed;
+  display: flex;
   background-color: white;
   top: 0;
   right: 0;

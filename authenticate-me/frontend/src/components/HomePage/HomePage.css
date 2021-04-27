@@ -1,3 +1,77 @@
 .homepage {
-  margin-top: 4rem;
+  margin-top: 59px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 40vh;
+  background-color: #f6f6f6;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.h3-div {
+  margin-top: 1rem;
+}
+.hero-text h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+.image-container {
+  height: 40vh;
+  width: 40vw;
+}
+.hero-image {
+  background-image: url("./herobanner.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30vh;
+  width: 30vh;
+  margin: auto;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.home-links {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 40vh;
+}
+.link-containers {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: center;
+}
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 2rem;
+}
+.event-container a {
+  margin-top: 0.3rem;
+  color: #2f8ba2;
+}
+.event-links {
+  width: 22vw;
+  height: 22vh;
+  border-radius: 15px;
+  background-color: red;
+  border: solid white;
+}
+
+.home-intro {
+  width: 100vw;
+  height: 60vh;
 }

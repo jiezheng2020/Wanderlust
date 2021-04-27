@@ -53,13 +53,15 @@ function LoginFormPage() {
             Log in
           </button>
         </div>
-        <div className="login-errors">
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
-            ))}
-          </ul>
-        </div>
+        {errors.length && (
+          <div className="login-errors">
+            <ul>
+              {errors.map((error, idx) => (
+                <li key={idx}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </form>
     </div>
   );

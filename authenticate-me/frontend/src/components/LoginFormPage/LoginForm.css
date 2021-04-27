@@ -14,7 +14,7 @@
   background-color: white;
   flex-direction: column;
   width: 25vw;
-  height: 40vh;
+  height: 35vh;
   align-items: center;
 }
 
@@ -34,12 +34,28 @@
   flex-direction: column;
   font-size: 13px;
   font-weight: 600;
-  width: 95%;
+  width: 93%;
 }
 
 .loginform-btn {
   font-size: 18px;
-  margin-top: 2.2rem;
+  margin-top: 2rem;
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.loginform-btn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .user-input {
@@ -49,7 +65,7 @@
   background-color: rgb(243, 243, 243);
   opacity: 0.8;
   border-width: thin;
-  padding-top: 10px;
+  padding-top: 15px;
   color: black;
 }
 

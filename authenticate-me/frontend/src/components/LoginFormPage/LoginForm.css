@@ -75,3 +75,12 @@
   border-width: thin;
   opacity: 1;
 }
+
+.login-errors {
+  margin-top: 1rem;
+  background-color: red;
+  opacity: 0.9;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 15px;
+}

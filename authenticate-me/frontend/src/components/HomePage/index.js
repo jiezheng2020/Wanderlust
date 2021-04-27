@@ -9,5 +9,5 @@ export default function HomePage() {
 
   if (sessionUser) return <Redirect to="/authorized"></Redirect>;
 
-  return <div>This is HomePage</div>;
+  return <div className="homepage">This is HomePage</div>;
 }

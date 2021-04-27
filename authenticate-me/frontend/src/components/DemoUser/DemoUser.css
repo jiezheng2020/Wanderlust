@@ -1,0 +1,19 @@
+.demo-btn {
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+}
+button:hover {
+  cursor: pointer;
+}
+.demo-btn:hover {
+  opacity: 1;
+}

@@ -25,8 +25,8 @@ function Navigation({ isLoaded }) {
   return (
     <div className="navbar">
       <div className="navhome">
-        <NavLink exact to="/">
-          Home
+        <NavLink className="home-logo" exact to="/">
+          Wanderlust
         </NavLink>
       </div>
       <div className="navlinks">{isLoaded && sessionLinks}</div>

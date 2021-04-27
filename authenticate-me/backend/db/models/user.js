@@ -52,10 +52,26 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     User.hasMany(models.Event, { foreignKey: "hostId" });
-    User.hasMany(models.EventAttendee, { foreignKey: "userId" });
     User.hasMany(models.Group, { foreignKey: "organizerId" });
-    User.hasMany(models.GroupMember, { foreignKey: "userId" });
-    User.hasMany(models.Comment, { foreignKey: "userId" });
+    User.belongsToMany(models.Event, {
+      through: "Comment",
+      foreignKey: "userId",
+      otherKey: "eventId",
+      onDelete: "CASCADE",
+    });
+    User.belongsToMany(models.Group, {
+      through: "GroupMember",
+      foreignKey: "userId",
+      otherKey: "groupId",
+      onDelete: "CASCADE",
+    });
+    User.belongsToMany(models.Event, {
+      through: "EventAttendee",
+      foreignKey: "userId",
+      otherKey: "eventId",
+      as: "userEvents",
+      onDelete: "CASCADE",
+    });
   };
 
   User.prototype.toSafeObject = function () {

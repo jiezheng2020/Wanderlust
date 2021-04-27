@@ -8,9 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  EventAttendee.associate = function (models) {
-    EventAttendee.belongsTo(models.Event, { foreignKey: "eventId" });
-    EventAttendee.belongsTo(models.User, { foreignKey: "userId" });
-  };
+  EventAttendee.associate = function (models) {};
   return EventAttendee;
 };

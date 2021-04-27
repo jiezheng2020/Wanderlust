@@ -8,9 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  GroupCalendar.associate = function (models) {
-    GroupCalendar.belongsTo(models.Group, { foreignKey: "groupId" });
-    GroupCalendar.belongsTo(models.Event, { foreignKey: "eventId" });
-  };
+  GroupCalendar.associate = function (models) {};
   return GroupCalendar;
 };

@@ -5,6 +5,9 @@ import { Redirect, Link } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import SignupForm from "../SignupFormModal/SignupForm";
 import "./HomePage.css";
+import image1 from "./img1.svg";
+import image2 from "./img2.svg";
+import image3 from "./img3.svg";
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
@@ -56,17 +59,17 @@ export default function HomePage() {
         </div>
         <div className="intro-link-containers">
           <div className="link-container">
-            <div className="link-image">Image</div>
+            <img className="link-image" src={image1} />
             <Link to="/">Click Me</Link>
             <p>More Text</p>
           </div>
           <div className="link-container">
-            <div className="link-image">Image</div>
+            <img className="link-image" src={image2} />
             <Link to="/">Click Me</Link>
             <p>More Text</p>
           </div>
           <div className="link-container">
-            <div className="link-image">Image</div>
+            <img className="link-image" src={image3} />
             <Link to="/">Click Me</Link>
             <p>More Text</p>
           </div>

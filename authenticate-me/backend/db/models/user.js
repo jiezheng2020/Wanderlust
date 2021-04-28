@@ -57,19 +57,21 @@ module.exports = (sequelize, DataTypes) => {
       through: "Comment",
       foreignKey: "userId",
       otherKey: "eventId",
+      as: "Comments",
       onDelete: "CASCADE",
     });
     User.belongsToMany(models.Group, {
       through: "GroupMember",
       foreignKey: "userId",
       otherKey: "groupId",
+      as: "Members",
       onDelete: "CASCADE",
     });
     User.belongsToMany(models.Event, {
       through: "EventAttendee",
       foreignKey: "userId",
       otherKey: "eventId",
-      as: "userEvents",
+      as: "Attendees",
       onDelete: "CASCADE",
     });
   };

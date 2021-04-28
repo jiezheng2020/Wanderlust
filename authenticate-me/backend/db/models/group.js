@@ -29,12 +29,14 @@ module.exports = (sequelize, DataTypes) => {
       through: "GroupMember",
       foreignKey: "groupId",
       otherKey: "userId",
+      as: "Members",
       onDelete: "CASCADE",
     });
     Group.belongsToMany(models.Event, {
       through: "GroupCalendar",
       foreignKey: "groupId",
       otherKey: "eventId",
+      as: "Calendars",
       onDelete: "CASCADE",
     });
   };

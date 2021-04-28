@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "Comment",
       foreignKey: "eventId",
       otherKey: "userId",
+      as: "Comments",
       onDelete: "CASCADE",
     });
     Event.belongsToMany(models.User, {
@@ -43,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "GroupCalendar",
       foreignKey: "eventId",
       otherKey: "groupId",
+      as: "Calendar",
       onDelete: "CASCADE",
     });
   };

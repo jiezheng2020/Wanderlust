@@ -10,7 +10,7 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const events = await Event.findAll({
-      include: [{ model: User, as: "Attendees" }],
+      include: [{ model: User, as: "Attendees" }, Group],
     });
     return res.json(events);
   })

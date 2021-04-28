@@ -54,7 +54,7 @@ export default function HomePage() {
           <h1>How Wanderlust Works</h1>
           <h3>
             Meet others who share your interest and attend events. It's free to
-            create an account
+            create an account!
           </h3>
         </div>
         <div className="intro-link-containers">

@@ -12,31 +12,40 @@ export default function Authorized() {
   return (
     <div className="authorized-home">
       <div className="events-containers">
-        <div classname="events-content">
-          <h1>Most Popular Events</h1>
-          <div className="events-row">
-            <div className="event-item">1</div>
-            <div className="event-item">2</div>
-            <div className="event-item">3</div>
-            <div className="event-item">4</div>
+        <div className="events-content row1">
+          <div className="event-text-row">
+            <h1>Most Popular Events</h1>
+            <Link to="/">See All</Link>
+          </div>
+          <div className="events-row ">
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
           </div>
         </div>
-        <div classname="events-content">
-          <h1>Events By</h1>
+        <div className="events-content row2">
+          <div className="event-text-row">
+            <h1>Events By</h1>
+            <Link to="/">See All</Link>
+          </div>
           <div className="events-row">
-            <div className="event-item">1</div>
-            <div className="event-item">2</div>
-            <div className="event-item">3</div>
-            <div className="event-item">4</div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
           </div>
         </div>
-        <div classname="events-content">
-          <h1>Other Events</h1>
+        <div className="events-content row3">
+          <div className="event-text-row">
+            <h1>Other Events</h1>
+            <Link to="/">See All</Link>
+          </div>
           <div className="events-row">
-            <div className="event-item">1</div>
-            <div className="event-item">2</div>
-            <div className="event-item">3</div>
-            <div className="event-item">4</div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
+            <div className="event-item"></div>
           </div>
         </div>
       </div>

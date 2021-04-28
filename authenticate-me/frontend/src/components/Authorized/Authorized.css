@@ -3,12 +3,30 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
+  background-color: #f6f6f6;
 }
 
 .events-containers {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
+}
+
+.events-content h1 {
+  font-weight: 600;
+  margin: 2vh 0;
+}
+
+.event-text-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 15vw;
+}
+
+.event-text-row a {
+  margin-top: 3vh;
 }
 .events-row {
   display: flex;
@@ -18,12 +36,13 @@
   margin: 0 10vw;
 }
 
-.events-content h1 {
-  font-size: 200px;
-}
 .event-item {
   background-color: red;
   border-radius: 15px;
   height: 30vh;
   width: 14vw;
+}
+
+.row2 {
+  background-color: white;
 }

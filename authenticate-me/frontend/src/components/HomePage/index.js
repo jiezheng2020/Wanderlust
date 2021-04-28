@@ -60,18 +60,24 @@ export default function HomePage() {
         <div className="intro-link-containers">
           <div className="link-container">
             <img className="link-image" src={image1} />
-            <Link to="/">Click Me</Link>
-            <p>More Text</p>
+            <Link to="/">Join a group</Link>
+            <p>Find a community that</p>
+            <p>shares your interests!</p>
           </div>
           <div className="link-container">
             <img className="link-image" src={image2} />
-            <Link to="/">Click Me</Link>
-            <p>More Text</p>
+            <Link to="/">Find an event</Link>
+            <p>Events are being planned</p>
+            <p>everywhere! Find a location</p>
+            <p>or activity you are interested</p>
+            <p>in, from hiking in California</p>
+            <p>to roaming the streets of Tokyo.</p>
           </div>
           <div className="link-container">
             <img className="link-image" src={image3} />
-            <Link to="/">Click Me</Link>
-            <p>More Text</p>
+            <Link to="/">Start a group</Link>
+            <p>Gather people together</p>
+            <p>and explore shared interests.</p>
           </div>
         </div>
         <button className="join-btn" onClick={() => setShowModal(true)}>

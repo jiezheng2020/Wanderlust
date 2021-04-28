@@ -86,26 +86,66 @@
 
 .home-intro {
   background-color: #f6f6f6;
-  height: 50vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.intro-title {
+  text-align: center;
+}
+
+.intro-title h3 {
+  font-weight: 300;
+  padding-bottom: 1rem;
 }
 
 .intro-link-containers {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  margin-top: 2rem;
   width: 90vw;
-  height: 25vh;
+  height: 32vh;
 }
 .link-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.link-container p {
+  margin: 0;
+  font-weight: 300;
+}
+
+.link-container a {
+  margin-top: 0.3rem;
+  font-size: 19px;
+  color: #2f8ba2;
+}
+
 .link-image {
   width: 13vw;
   height: 13vh;
+  padding-bottom: 1rem;
+}
+
+.join-btn {
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.join-btn:hover {
+  opacity: 1;
 }

@@ -1,3 +1,29 @@
 .authorized-home {
   margin-top: 59px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.events-containers {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.events-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 40vh;
+  margin: 0 10vw;
+}
+
+.events-content h1 {
+  font-size: 200px;
+}
+.event-item {
+  background-color: red;
+  border-radius: 15px;
+  height: 30vh;
+  width: 14vw;
 }

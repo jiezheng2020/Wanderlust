@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
+import { getEvents } from "../../store/events";
 import "./Authorized.css";
 
 export default function Authorized() {
   const sessionUser = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+  const events = useSelector((state) => {
+    return state.events.events?.map((eventId) => eventId);
+  });
 
+  useEffect(() => {
+    dispatch(getEvents());
+  }, [dispatch]);
+
+  if (!events) return null;
+  console.log(events[0]);
   if (!sessionUser) return <Redirect to="/"></Redirect>;
 
   return (

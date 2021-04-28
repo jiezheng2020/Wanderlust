@@ -17,6 +17,7 @@ export default function Authorized() {
   }, [dispatch]);
 
   if (!events) return null;
+
   console.log(events[0]);
   if (!sessionUser) return <Redirect to="/"></Redirect>;
 

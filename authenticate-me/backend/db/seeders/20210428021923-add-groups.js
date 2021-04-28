@@ -8,14 +8,14 @@ module.exports = {
 
     const users = await models.User.findAll();
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       const name = [
-        "Traveling to " + faker.address.country(),
-        "Hiking Excursion at " + faker.address.city(),
-        "Nightlife in " + faker.address.city(),
+        "Friends In " + faker.address.country(),
+        "Hikers Of " + faker.address.city(),
+        "Residents Of " + faker.address.city(),
       ];
       const randId = Math.floor(Math.random() * users.length + 1);
-      const randName = Math.floor(Math.random() * 3);
+      const randName = Math.floor(Math.random() * name.length);
       const randlocation =
         faker.address.streetAddress() +
         " " +

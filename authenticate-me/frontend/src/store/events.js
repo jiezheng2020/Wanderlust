@@ -1,10 +1,16 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD = "events/LOAD";
+const LOAD_ONE = "events/LOAD_ONE";
 
 const load = (events) => ({
   type: LOAD,
   events,
+});
+
+const loadOne = (event) => ({
+  type: LOAD_ONE,
+  event,
 });
 
 const sortEvent = (events) => {
@@ -24,12 +30,28 @@ export const getEvents = () => async (dispatch) => {
   }
 };
 
+export const getOneEvent = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/event/${id}`);
+
+  if (response.ok) {
+    const event = await response.json();
+    dispatch(loadOne(event));
+    return event;
+  }
+};
+
 const eventReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD: {
       return {
         ...state,
         events: sortEvent(action.events),
+      };
+    }
+    case LOAD_ONE: {
+      return {
+        ...state,
+        event: action.event,
       };
     }
     default:

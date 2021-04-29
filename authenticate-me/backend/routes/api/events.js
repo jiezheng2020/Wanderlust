@@ -16,4 +16,19 @@ router.get(
   })
 );
 
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const event = await Event.findByPk(id, {
+      include: [
+        { model: User, as: "Attendees" },
+        { model: User, as: "Comments" },
+        Group,
+      ],
+    });
+    return res.json(event);
+  })
+);
+
 module.exports = router;

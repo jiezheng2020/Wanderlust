@@ -7,6 +7,14 @@ const load = (events) => ({
   events,
 });
 
+const sortEvent = (events) => {
+  return events
+    .sort((eventsA, eventsB) => {
+      return eventsB.Attendees.length - eventsA.Attendees.length;
+    })
+    .map((event) => event);
+};
+
 export const getEvents = () => async (dispatch) => {
   const response = await csrfFetch("/api/event");
 
@@ -19,14 +27,9 @@ export const getEvents = () => async (dispatch) => {
 const eventReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD: {
-      //   const allEvents = [];
-      //   action.events.forEach((event) => {
-      //     allEvents[event.id] = event;
-      //   });
-
       return {
         ...state,
-        events: action.events,
+        events: sortEvent(action.events),
       };
     }
     default:

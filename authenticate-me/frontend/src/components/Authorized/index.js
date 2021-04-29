@@ -12,11 +12,19 @@ export default function Authorized() {
     return state.events.events?.map((eventId) => eventId);
   });
 
+  const groupEvents = useSelector((state) => {
+    return state.events.events?.filter(
+      (eventId) => eventId.Group.id == events[0].groupId
+    );
+  });
+
   useEffect(() => {
     dispatch(getEvents());
   }, [dispatch]);
 
   if (!events) return null;
+  if (!groupEvents) return null;
+  console.log(groupEvents);
 
   const imgAdd =
     "https://static01.nyt.com/images/2020/11/15/business/15biz-JAPAN-ECON/15biz-JAPAN-ECON-videoSixteenByNineJumbo1600.jpg";
@@ -96,14 +104,86 @@ export default function Authorized() {
         </div>
         <div className="events-content row2">
           <div className="event-text-row">
-            <h1>Events By</h1>
+            <h1>More Events By {events[0].Group.name}</h1>
             <Link to="/">See All</Link>
           </div>
           <div className="events-row">
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${groupEvents[1].id}`}>
+                  <img
+                    className="event-item-image"
+                    src={groupEvents[1].image}
+                  />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{groupEvents[1].detailsTime}</h3>
+                <h4>{groupEvents[1].name}</h4>
+                <h5>{groupEvents[1].Group.name}</h5>
+                <h5>
+                  {groupEvents[1].Attendees.length} people are attending this
+                  event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${groupEvents[2].id}`}>
+                  <img
+                    className="event-item-image"
+                    src={groupEvents[2].image}
+                  />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{groupEvents[2].detailsTime}</h3>
+                <h4>{groupEvents[2].name}</h4>
+                <h5>{groupEvents[2].Group.name}</h5>
+                <h5>
+                  {groupEvents[2].Attendees.length} people are attending this
+                  event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${groupEvents[3].id}`}>
+                  <img
+                    className="event-item-image"
+                    src={groupEvents[3].image}
+                  />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{groupEvents[3].detailsTime}</h3>
+                <h4>{groupEvents[3].name}</h4>
+                <h5>{groupEvents[3].Group.name}</h5>
+                <h5>
+                  {groupEvents[3].Attendees.length} people are attending this
+                  event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${groupEvents[4].id}`}>
+                  <img
+                    className="event-item-image"
+                    src={groupEvents[4].image}
+                  />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{groupEvents[4].detailsTime}</h3>
+                <h4>{groupEvents[4].name}</h4>
+                <h5>{groupEvents[4].Group.name}</h5>
+                <h5>
+                  {groupEvents[4].Attendees.length} people are attending this
+                  event
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
         <div className="events-content row3">
@@ -112,10 +192,66 @@ export default function Authorized() {
             <Link to="/">See All</Link>
           </div>
           <div className="events-row">
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[6].id}`}>
+                  <img className="event-item-image" src={events[6].image} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[6].detailsTime}</h3>
+                <h4>{events[6].name}</h4>
+                <h5>{events[6].Group.name}</h5>
+                <h5>
+                  {events[6].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[7].id}`}>
+                  <img className="event-item-image" src={events[7].image} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[7].detailsTime}</h3>
+                <h4>{events[7].name}</h4>
+                <h5>{events[7].Group.name}</h5>
+                <h5>
+                  {events[7].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[8].id}`}>
+                  <img className="event-item-image" src={events[8].image} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[8].detailsTime}</h3>
+                <h4>{events[8].name}</h4>
+                <h5>{events[8].Group.name}</h5>
+                <h5>
+                  {events[8].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[9].id}`}>
+                  <img className="event-item-image" src={events[9].image} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[9].detailsTime}</h3>
+                <h4>{events[9].name}</h4>
+                <h5>{events[9].Group.name}</h5>
+                <h5>
+                  {events[9].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>

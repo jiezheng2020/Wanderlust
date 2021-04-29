@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupForm from "./components/SignupFormModal";
 import HomePage from "./components/HomePage";
 import Authorized from "./components/Authorized";
+import Event from "./components/Event";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginFormPage />
+          </Route>
+          <Route path="/event/:id">
+            <Event />
           </Route>
         </Switch>
       )}

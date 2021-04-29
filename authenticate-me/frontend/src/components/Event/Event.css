@@ -1,3 +1,64 @@
 .event-page {
   margin-top: 59px;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.event-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-bottom: solid #b8b8b8;
+  border-width: thin;
+  padding-left: 2vw;
+  height: 19vh;
+}
+
+.event-header h4 {
+  margin: 1rem 0;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.event-header h2 {
+  margin-top: 0rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.event-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.event-image {
+  max-width: auto;
+  max-height: 35vh;
+}
+
+.event-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 2rem;
+  width: 20vw;
+}
+
+.event-content-group {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  height: 15vh;
+}
+
+.event-content-time {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  height: 15vh;
+  margin-top: 5vh;
 }

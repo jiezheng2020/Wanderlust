@@ -18,7 +18,9 @@ export default function Authorized() {
 
   if (!events) return null;
 
-  console.log(events[0]);
+  const imgAdd =
+    "https://static01.nyt.com/images/2020/11/15/business/15biz-JAPAN-ECON/15biz-JAPAN-ECON-videoSixteenByNineJumbo1600.jpg";
+
   if (!sessionUser) return <Redirect to="/"></Redirect>;
 
   return (
@@ -30,10 +32,66 @@ export default function Authorized() {
             <Link to="/">See All</Link>
           </div>
           <div className="events-row ">
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
-            <div className="event-item"></div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[0].id}`}>
+                  <img className="event-item-image" src={imgAdd} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[0].detailsTime}</h3>
+                <h4>{events[0].name}</h4>
+                <h5>{events[0].Group.name}</h5>
+                <h5>
+                  {events[0].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[1].id}`}>
+                  <img className="event-item-image" src={imgAdd} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[1].detailsTime}</h3>
+                <h4>{events[1].name}</h4>
+                <h5>{events[1].Group.name}</h5>
+                <h5>
+                  {events[1].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[2].id}`}>
+                  <img className="event-item-image" src={imgAdd} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[2].detailsTime}</h3>
+                <h4>{events[2].name}</h4>
+                <h5>{events[2].Group.name}</h5>
+                <h5>
+                  {events[2].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
+            <div className="event-item">
+              <div className="event-item-image">
+                <Link to={`/event/${events[3].id}`}>
+                  <img className="event-item-image" src={imgAdd} />
+                </Link>
+              </div>
+              <div className="event-item-text">
+                <h3>{events[3].detailsTime}</h3>
+                <h4>{events[3].name}</h4>
+                <h5>{events[3].Group.name}</h5>
+                <h5>
+                  {events[3].Attendees.length} people are attending this event
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
         <div className="events-content row2">

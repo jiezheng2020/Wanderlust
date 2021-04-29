@@ -45,7 +45,7 @@ export default function Event() {
         </div>
       </div>
       <div className="event-details">
-        <h3>Details</h3>
+        <h2>Details</h2>
         {event.detailsBody}
       </div>
       <div className="event-attendees">
@@ -58,7 +58,7 @@ export default function Event() {
           console.log(comment);
           return (
             <div className="event-comment-box" key={comment.id}>
-              <label>{comment.username}:</label>
+              <label className="comment-username">{comment.username}: </label>
               <label>{comment.Comment.body}</label>
             </div>
           );

@@ -37,7 +37,7 @@
 }
 
 .event-image {
-  max-width: auto;
+  max-width: 25vw;
   max-height: 35vh;
   margin-right: 5vw;
 }
@@ -113,6 +113,7 @@
 .event-comment-title {
   margin-top: 3vh;
   padding-left: 23vw;
+  margin-bottom: 1vh;
 }
 
 .event-comments {
@@ -122,10 +123,12 @@
   overflow: auto;
   margin-bottom: 10vh;
 }
-
+.comment-username {
+  font-weight: 500;
+}
 .event-comment-box {
   background-color: rgb(226, 226, 226);
   border-radius: 15px;
-  padding: 1.5rem 0 1.5rem 1rem;
+  padding: 1.5rem;
   margin: 1rem 0;
 }

@@ -20,6 +20,12 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
+      image: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+        defaultValue:
+          "https://16jp781s7hqv3vm1s322uful-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/Kabukicho-Shinjuku-Tokyo-Japan-1140x760.jpg",
+      },
       groupId: {
         type: Sequelize.INTEGER,
         allowNull: false,

@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
       },
       detailsBody: { type: DataTypes.TEXT, allowNull: false },
       detailsTime: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      image: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {

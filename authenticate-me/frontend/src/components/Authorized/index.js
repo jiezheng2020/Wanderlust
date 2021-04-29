@@ -35,7 +35,7 @@ export default function Authorized() {
             <div className="event-item">
               <div className="event-item-image">
                 <Link to={`/event/${events[0].id}`}>
-                  <img className="event-item-image" src={imgAdd} />
+                  <img className="event-item-image" src={events[0].image} />
                 </Link>
               </div>
               <div className="event-item-text">
@@ -50,7 +50,7 @@ export default function Authorized() {
             <div className="event-item">
               <div className="event-item-image">
                 <Link to={`/event/${events[1].id}`}>
-                  <img className="event-item-image" src={imgAdd} />
+                  <img className="event-item-image" src={events[0].image} />
                 </Link>
               </div>
               <div className="event-item-text">
@@ -65,7 +65,7 @@ export default function Authorized() {
             <div className="event-item">
               <div className="event-item-image">
                 <Link to={`/event/${events[2].id}`}>
-                  <img className="event-item-image" src={imgAdd} />
+                  <img className="event-item-image" src={events[0].image} />
                 </Link>
               </div>
               <div className="event-item-text">
@@ -80,7 +80,7 @@ export default function Authorized() {
             <div className="event-item">
               <div className="event-item-image">
                 <Link to={`/event/${events[3].id}`}>
-                  <img className="event-item-image" src={imgAdd} />
+                  <img className="event-item-image" src={events[0].image} />
                 </Link>
               </div>
               <div className="event-item-text">

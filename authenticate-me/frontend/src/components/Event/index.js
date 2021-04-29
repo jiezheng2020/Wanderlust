@@ -25,18 +25,23 @@ export default function Event() {
   return (
     <div className="event-page">
       <div className="event-header">
-        <h4>Thursday, April 29, 2021</h4>
-        <h2>The Player(1992)</h2>
-        <h4>Hosted By Mindy</h4>
+        <h4>{event.detailsTime}</h4>
+        <h2>{event.name}</h2>
+        <h4>Hosted by {event.User.username}</h4>
       </div>
       <div className="event-content">
         <img className="event-image" src={event.image} />
         <div className="event-content-text">
           <div className="event-content-group">
             <img className="event-group-img" src={groupImg} />
-            <label>Hosted by Group</label>
+            <div className="event-group-text">
+              <label>{event.Group.name}</label>
+              <p>Public group</p>
+            </div>
           </div>
-          <div className="event-content-time">Event Time</div>
+          <div className="event-content-time">
+            <label>Event will take place on {event.detailsTime}</label>
+          </div>
         </div>
       </div>
       <div className="event-details">Event Details</div>

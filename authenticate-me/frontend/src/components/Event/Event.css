@@ -11,15 +11,15 @@
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  padding-left: 23vw;
   border-bottom: solid #b8b8b8;
   border-width: thin;
-  padding-left: 2vw;
   height: 19vh;
 }
 
 .event-header h4 {
   margin: 1rem 0;
-  font-weight: 300;
+  font-weight: 400;
   display: inline-block;
 }
 
@@ -34,18 +34,19 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 43vh;
 }
 
 .event-image {
   max-width: auto;
   max-height: 35vh;
+  margin-right: 5vw;
 }
 
 .event-content-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 2rem;
   width: 20vw;
 }
@@ -53,22 +54,48 @@
 .event-content-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   height: 15vh;
 }
 
+.event-content-group label {
+  font-weight: 600;
+}
+
 .event-group-img {
   max-height: 10vh;
-  width: auto;
-  border-radius: 15px;
+  max-width: 10vw;
+  border-radius: 5px;
+  margin-left: 1rem;
+}
+
+.event-group-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.event-group-text p {
+  font-weight: 400;
+  color: gray;
 }
 
 .event-content-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
-  height: 15vh;
+  height: 10vh;
   margin-top: 5vh;
+}
+
+.event-content-time label {
+  width: fit-content;
+  height: fit-content;
+  font-weight: 400;
 }

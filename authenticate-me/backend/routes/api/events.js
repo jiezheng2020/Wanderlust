@@ -25,6 +25,7 @@ router.get(
         { model: User, as: "Attendees" },
         { model: User, as: "Comments" },
         Group,
+        User,
       ],
     });
     return res.json(event);

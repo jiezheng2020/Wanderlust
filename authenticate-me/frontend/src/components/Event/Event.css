@@ -3,7 +3,6 @@
   background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
-  width: 100vw;
 }
 
 .event-header {
@@ -98,4 +97,35 @@
   width: fit-content;
   height: fit-content;
   font-weight: 400;
+}
+
+.event-details {
+  padding-left: 23vw;
+  max-width: 28vw;
+}
+
+.event-attendees {
+  margin-top: 1vh;
+  padding-left: 23vw;
+  max-width: 28vw;
+}
+
+.event-comment-title {
+  margin-top: 3vh;
+  padding-left: 23vw;
+}
+
+.event-comments {
+  padding-left: 23vw;
+  max-width: 28vw;
+  max-height: 40vh;
+  overflow: auto;
+  margin-bottom: 10vh;
+}
+
+.event-comment-box {
+  background-color: rgb(226, 226, 226);
+  border-radius: 15px;
+  padding: 1.5rem 0 1.5rem 1rem;
+  margin: 1rem 0;
 }

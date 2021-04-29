@@ -44,9 +44,26 @@ export default function Event() {
           </div>
         </div>
       </div>
-      <div className="event-details">Event Details</div>
-      <div className="event-attendees">Event Attendees</div>
-      <div className="event-comments">Event Comments</div>
+      <div className="event-details">
+        <h3>Details</h3>
+        {event.detailsBody}
+      </div>
+      <div className="event-attendees">
+        <h3>{`Attendees (${event.Attendees.length})`}</h3>
+        <div>List of Attendees</div>
+      </div>
+      <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
+      <div className="event-comments">
+        {event.Comments?.map((comment) => {
+          console.log(comment);
+          return (
+            <div className="event-comment-box" key={comment.id}>
+              <label>{comment.username}:</label>
+              <label>{comment.Comment.body}</label>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

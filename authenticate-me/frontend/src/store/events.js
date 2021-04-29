@@ -40,6 +40,20 @@ export const getOneEvent = (id) => async (dispatch) => {
   }
 };
 
+export const createEventComment = (payload) => async (dispatch) => {
+  const id = payload.eventId;
+  const response = await csrfFetch(`api/event/${id}`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    const comment = response.json();
+    return comment;
+  }
+};
+
 const eventReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD: {

@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link, useParams } from "react-router-dom";
 import "./Event.css";
-import { getOneEvent } from "../../store/events";
+import { getOneEvent, createEventComment } from "../../store/events";
 
 export default function Event() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -24,8 +24,17 @@ export default function Event() {
 
   if (!event) return null;
 
-  const AddComment = () => {
+  const AddComment = async () => {
     if (comment.length) setuserComment(true);
+    const payload = {
+      eventId: id,
+      userId: sessionUser.id,
+      body: comment,
+    };
+    console.log(payload);
+
+    const newComment = await dispatch(createEventComment(payload));
+    console.log(newComment, "comment 2");
   };
 
   return (
@@ -62,7 +71,6 @@ export default function Event() {
       <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
       <div className="event-comments">
         {event.Comments?.map((comment) => {
-          console.log(comment);
           return (
             <div className="event-comment-box" key={comment.id}>
               <label className="comment-username">{comment.username}: </label>

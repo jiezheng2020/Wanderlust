@@ -13,7 +13,7 @@
   padding-left: 23vw;
   border-bottom: solid #b8b8b8;
   border-width: thin;
-  height: 19vh;
+  height: 24vh;
 }
 
 .event-header h4 {
@@ -121,7 +121,7 @@
   max-width: 28vw;
   max-height: 40vh;
   overflow: auto;
-  margin-bottom: 10vh;
+  margin-bottom: 1.5rem;
 }
 .comment-username {
   font-weight: 500;
@@ -131,4 +131,56 @@
   border-radius: 15px;
   padding: 1.5rem;
   margin: 1rem 0;
+}
+
+.comment-submit {
+  display: flex;
+  flex-direction: column;
+  padding-left: 23vw;
+  margin-bottom: 10vh;
+}
+
+.comment-submit textarea {
+  width: 28vw;
+}
+
+.comment-submit button {
+  width: fit-content;
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.comment-submit button:hover,
+.request-btn:hover {
+  opacity: 1;
+}
+
+.delete-btn {
+  margin-left: 0.5rem;
+}
+
+.request-btn {
+  width: fit-content;
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+  margin-bottom: 1rem;
 }

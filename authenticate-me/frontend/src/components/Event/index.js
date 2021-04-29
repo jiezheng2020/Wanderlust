@@ -25,8 +25,7 @@ export default function Event() {
   if (!event) return null;
 
   const AddComment = () => {
-    console.log(comment);
-    setuserComment(true);
+    if (comment.length) setuserComment(true);
   };
 
   return (
@@ -35,6 +34,7 @@ export default function Event() {
         <h4>{event.detailsTime}</h4>
         <h2>{event.name}</h2>
         <h4>Hosted by {event.User.username}</h4>
+        {sessionUser && <button className="request-btn">Join Event</button>}
       </div>
       <div className="event-content">
         <img className="event-image" src={event.image} />
@@ -71,10 +71,23 @@ export default function Event() {
           );
         })}
       </div>
-      {!userComment && (
+      {sessionUser && (
         <div className="comment-submit">
-          <textarea onChange={(e) => setComment(e.target.value)}></textarea>
-          <button onClick={AddComment}>Add a Comment</button>
+          <textarea
+            placeholder="Please enter a comment here"
+            onChange={(e) => setComment(e.target.value)}
+          ></textarea>
+          {!userComment && <button onClick={AddComment}>Add</button>}
+          {userComment && (
+            <div className="edit-delete">
+              <button className="edit-btn" onClick={AddComment}>
+                Edit
+              </button>
+              <button className="delete-btn" onClick={AddComment}>
+                Delete
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -33,7 +33,7 @@ function App() {
           <Route path="/event/:id">
             <Event />
           </Route>
-          <Route path="/group">
+          <Route path="/group/:id">
             <Groups />
           </Route>
         </Switch>

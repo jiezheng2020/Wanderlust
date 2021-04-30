@@ -121,9 +121,19 @@
   align-items: center;
 }
 .event-row {
+  display: flex;
+  flex-direction: row;
   background-color: rgb(43, 43, 43);
   border-radius: 10px;
   width: 45vw;
   height: 10vh;
   margin-top: 1.5vh;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.event-row-text h4,
+h3 {
+  margin: 0 0 0.2rem 1rem;
+  width: 30vw;
 }

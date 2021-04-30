@@ -27,14 +27,14 @@ export const addGroupMember = (payload) => async (dispatch) => {
   const response = await csrfFetch(`/api/group/${groupId}`, {
     method: "POST",
     body: JSON.stringify(payload),
-    headers: { "Content-type": "application/json" },
+    headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
     const member = await response.json();
-    console.log(member, "this is member");
   }
 };
+
 const groupReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD: {

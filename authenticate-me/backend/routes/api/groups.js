@@ -31,8 +31,10 @@ router.get(
 router.post(
   "/:id",
   asyncHandler(async (req, res) => {
-    console.log(req.body);
-    // const newMember = await GroupMember.create(groupId, userId);
+    const { userId, groupId } = req.body;
+    const newMember = await GroupMember.create({ groupId, userId });
+
+    return res.json(newMember);
   })
 );
 

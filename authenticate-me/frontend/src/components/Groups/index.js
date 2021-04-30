@@ -26,7 +26,7 @@ export default function Groups() {
 
   useEffect(() => {
     dispatch(getOneGroup(id));
-  }, [dispatch, id]);
+  }, [dispatch, joinedGroup, id]);
 
   const JoinGroup = async () => {
     const payload = {
@@ -35,6 +35,7 @@ export default function Groups() {
     };
 
     await dispatch(addGroupMember(payload));
+    setjoinGroup(!joinedGroup);
   };
 
   if (!sessionUser) return <Redirect to="/"></Redirect>;

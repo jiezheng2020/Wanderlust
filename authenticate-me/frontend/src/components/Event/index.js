@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Event.css";
 import { getOneEvent, createEventComment } from "../../store/events";
 
@@ -20,7 +19,7 @@ export default function Event() {
 
   useEffect(() => {
     dispatch(getOneEvent(id));
-  }, [dispatch, userComment]);
+  }, [dispatch, userComment, id]);
 
   if (!event) return null;
 
@@ -48,10 +47,10 @@ export default function Event() {
         {sessionUser && <button className="request-btn">Join Event</button>}
       </div>
       <div className="event-content">
-        <img className="event-image" src={event.image} />
+        <img alt="" className="event-image" src={event.image} />
         <div className="event-content-text">
           <div className="event-content-group">
-            <img className="event-group-img" src={groupImg} />
+            <img alt="" className="event-group-img" src={groupImg} />
             <div className="event-group-text">
               <label>{event.Group.name}</label>
               <p>Public group</p>
@@ -79,7 +78,7 @@ export default function Event() {
               <label>{comment.Comment.body}</label>
               {sessionUser.id === comment.id && (
                 <div className="edit-delete">
-                  <button className="edit-btn" onClick={AddComment}>
+                  <button className="edit-btn" onClick={AddComment(comment.id)}>
                     Edit
                   </button>
                   <button className="delete-btn" onClick={AddComment}>

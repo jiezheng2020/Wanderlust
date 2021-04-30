@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
-import SignupForm from "./components/SignupFormModal";
 import HomePage from "./components/HomePage";
 import Authorized from "./components/Authorized";
 import Event from "./components/Event";

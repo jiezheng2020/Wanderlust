@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import SignupForm from "../SignupFormModal/SignupForm";
@@ -59,13 +58,13 @@ export default function HomePage() {
         </div>
         <div className="intro-link-containers">
           <div className="link-container">
-            <img className="link-image" src={image1} />
+            <img alt="" className="link-image" src={image1} />
             <Link to="/">Join a group</Link>
             <p>Find a community that</p>
             <p>shares your interests!</p>
           </div>
           <div className="link-container">
-            <img className="link-image" src={image2} />
+            <img alt="" className="link-image" src={image2} />
             <Link to="/">Find an event</Link>
             <p>Events are being planned</p>
             <p>everywhere! Find a location</p>
@@ -74,7 +73,7 @@ export default function HomePage() {
             <p>to roaming the streets of Tokyo.</p>
           </div>
           <div className="link-container">
-            <img className="link-image" src={image3} />
+            <img alt="" className="link-image" src={image3} />
             <Link to="/">Start a group</Link>
             <p>Gather people together</p>
             <p>and explore shared interests.</p>

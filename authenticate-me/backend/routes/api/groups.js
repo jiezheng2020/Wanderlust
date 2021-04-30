@@ -2,7 +2,13 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
-const { Group, Event, User, GroupCalendar } = require("../../db/models/");
+const {
+  Group,
+  Event,
+  User,
+  GroupCalendar,
+  GroupMember,
+} = require("../../db/models/");
 
 const router = express.Router();
 
@@ -11,14 +17,18 @@ router.get(
   asyncHandler(async (req, res) => {
     const id = req.params.id;
     const group = await Group.findByPk(id, {
-      include: [{ model: Event, as: "Calendars" }, User],
+      include: [
+        { model: Event, as: "Calendars" },
+        { model: User, as: "Members" },
+        User,
+      ],
     });
 
     return res.json(group);
   })
 );
 
-// router.get(
+// router.post(
 //   "/:id/events",
 //   asyncHandler(async (req, res) => {
 //     const id = req.params.id;

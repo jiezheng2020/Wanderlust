@@ -7,6 +7,8 @@ import { getOneGroup } from "../../store/groups";
 export default function Groups() {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+
+  const [joinedGroup, setjoinGroup] = useState(false);
   const { id } = useParams();
   const group = useSelector((state) => {
     return state.group;
@@ -26,6 +28,15 @@ export default function Groups() {
     dispatch(getOneGroup(id));
   }, [dispatch, id]);
 
+  const JoinGroup = async () => {};
+
+  useEffect(() => {
+    const userInGroup = groupMembers?.filter(
+      (user) => user.id === sessionUser.id
+    );
+    if (userInGroup?.length) setjoinGroup(true);
+  }, [dispatch, groupMembers, sessionUser.id]);
+
   if (!sessionUser) return <Redirect to="/"></Redirect>;
   if (!group || !groupMembers || !groupEvents) return null;
 
@@ -39,8 +50,10 @@ export default function Groups() {
             <p>{groupMembers.length} members | Public Group</p>
             <p>Organized by {group.User.username}</p>
             <p>Located at {group.location}</p>
-            {sessionUser && (
-              <button className="join-group-btn"> Join Group</button>
+            {sessionUser && !joinedGroup && (
+              <button className="join-group-btn" onClick={() => JoinGroup()}>
+                Join Group
+              </button>
             )}
           </div>
         </div>
@@ -53,9 +66,9 @@ export default function Groups() {
         <h2>Upcoming Events({groupEvents.length})</h2>
         <div className="upcoming-events">
           <div className="test">
-            {group.Calendars.map((event) => {
+            {group.Calendars.map((event, i) => {
               return (
-                <Link to={`/event/${event.id}`}>
+                <Link key={i} to={`/event/${event.id}`}>
                   <div className="event-row">
                     <img src={event.image} />
                     <div className="event-row-text">

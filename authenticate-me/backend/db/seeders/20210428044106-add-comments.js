@@ -18,6 +18,12 @@ module.exports = {
         "Friend recommended I check this out, can't wait.",
         "Who should I contact for more details?",
         "Can't wait!",
+        "Woooohoooooo",
+        "Timeline doesn't match up, sad.",
+        "I could use a nice break",
+        "I wish I could go!",
+        "Sick!",
+        "Will you be doing more events in the future? Can't make this one.",
       ];
       const randBody = Math.floor(Math.random() * bodyArr.length);
       const randEvent = Math.floor(Math.random() * events.length + 1);

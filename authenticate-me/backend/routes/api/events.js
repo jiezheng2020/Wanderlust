@@ -73,13 +73,19 @@ router.delete(
   })
 );
 
-// router.put(
-//   "/:id/comment",
-//   asyncHandler(async (req, res) => {
-//     const { commentId } = req.body;
+router.put(
+  "/:id/comment",
+  asyncHandler(async (req, res) => {
+    const { eventId, commentId, userId, body } = req.body;
+    const newEventId = parseInt(eventId, 10);
 
-//     const comment = await Comment.findOne({ where: { id: commentId } });
-//   })
-// );
+    const Newcomment = await Comment.findOne({ where: { id: commentId } });
+    await Newcomment.update({
+      eventId: newEventId,
+      userId,
+      body,
+    });
+  })
+);
 
 module.exports = router;

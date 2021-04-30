@@ -24,7 +24,6 @@ export default function Authorized() {
 
   if (!events) return null;
   if (!groupEvents) return null;
-  console.log(groupEvents);
 
   if (!sessionUser) return <Redirect to="/"></Redirect>;
 

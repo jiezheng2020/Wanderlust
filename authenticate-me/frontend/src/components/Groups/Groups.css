@@ -67,7 +67,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 99.1vw;
   max-height: 40vh;
   background-color: #eeeeee;
   border-top: solid #d3d3d3;
@@ -95,7 +95,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 99.1vw;
   background-color: #eeeeee;
 }
 
@@ -123,7 +123,9 @@
 .event-row {
   display: flex;
   flex-direction: row;
-  background-color: rgb(43, 43, 43);
+  border: solid rgb(155, 155, 155);
+  border-width: thin;
+  background: linear-gradient(#eeeeee, #dddddd);
   border-radius: 10px;
   width: 45vw;
   height: 10vh;
@@ -132,8 +134,24 @@
   overflow: hidden;
 }
 
+.event-row img {
+  width: 10vw;
+}
+.event-row-text {
+  width: 30vw;
+  max-height: 10vh;
+  overflow: hidden;
+}
+
 .event-row-text h4,
 h3 {
-  margin: 0 0 0.2rem 1rem;
-  width: 30vw;
+  margin: 0 0 0.3rem 1rem;
+}
+
+.event-row-time {
+  font-weight: 500;
+}
+
+.event-row-body {
+  font-weight: 400;
 }

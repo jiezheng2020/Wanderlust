@@ -53,38 +53,20 @@ export default function Groups() {
         <h2>Upcoming Events({groupEvents.length})</h2>
         <div className="upcoming-events">
           <div className="test">
-            {/* {group.Calendars.map((event) => {
-              return <div className="event-row"> event </div>;
-            })} */}
-            <div className="event-row">
-              <img src={groupImg} />
-              <div className="event-row-text">
-                <h4>May 4, 2021</h4>
-                <h3>Promise Young Woman</h3>
-                <h4>Port Gabriella</h4>
-                <h4>
-                  "Sequi labore cum dolores minima quasi dolorum nesciunt
-                  maxime. Aliquam aliquam aut labore a dolores repellendus aut
-                  corporis sint. Culpa ullam et recusandae. Ut et neque sunt.
-                  Eaque qui beatae sint voluptatibus neque. Soluta fuga et vel
-                  autem aperiam dolorem ea occaecati. Accusantium et saepe
-                  voluptates nesciunt maxime et consequuntur fugiat. Repudiandae
-                  id deleniti inventore. Quasi voluptates sit et rem illum. Et
-                  porro rem. Culpa nemo atque iusto eligendi exercitationem
-                  voluptatem. Qui illo corporis repellendus quidem dolor
-                  accusamus eum. Quibusdam et ullam. Quis ut voluptas quasi odit
-                  ullam impedit tenetur."
-                </h4>
-              </div>
-            </div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
-            <div className="event-row">EVENT ROW</div>
+            {group.Calendars.map((event) => {
+              return (
+                <Link to={`/event/${event.id}`}>
+                  <div className="event-row">
+                    <img src={event.image} />
+                    <div className="event-row-text">
+                      <h4 className="event-row-time">{event.detailsTime}</h4>
+                      <h3>{event.name}</h3>
+                      <h4 className="event-row-body">{event.detailsBody}</h4>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

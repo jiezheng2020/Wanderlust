@@ -73,4 +73,13 @@ router.delete(
   })
 );
 
+// router.put(
+//   "/:id/comment",
+//   asyncHandler(async (req, res) => {
+//     const { commentId } = req.body;
+
+//     const comment = await Comment.findOne({ where: { id: commentId } });
+//   })
+// );
+
 module.exports = router;

@@ -70,6 +70,16 @@ export const removeComment = (payload) => async (dispatch) => {
   }
 };
 
+export const changeComment = (payload) => async (dispatch) => {
+  const { eventId, commentId, index } = payload;
+  const response = await csrfFetch(`/api/event/${eventId}/comment`, {
+    method: "PUT",
+    body: JSON.stringify({ commentId }),
+  });
+  if (response.ok) {
+  }
+};
+
 export const createEventComment = (payload) => async (dispatch) => {
   const id = payload.eventId;
   const { eventId, userId, body, sessionUser } = payload;

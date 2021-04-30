@@ -6,6 +6,7 @@ import {
   getOneEvent,
   createEventComment,
   removeComment,
+  changeComment,
 } from "../../store/events";
 
 export default function Event() {
@@ -20,6 +21,9 @@ export default function Event() {
 
   const [comment, setComment] = useState("");
   const [userComment, setuserComment] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [currentComment, setcurrentComment] = useState("");
+  const [editComment, seteditComment] = useState(-1);
 
   useEffect(() => {
     dispatch(getOneEvent(id));
@@ -42,7 +46,13 @@ export default function Event() {
     }
   };
 
-  async function EditComment(id) {}
+  async function UpdateComment(commentId, index) {}
+
+  function EditComment(i) {
+    setcurrentComment("test");
+    console.log(currentComment);
+    setEdit(!edit);
+  }
   async function Remove(commentId, index) {
     const payload = {
       eventId: id,
@@ -93,18 +103,35 @@ export default function Event() {
               <label>{comment.Comment.body}</label>
               {sessionUser?.id === comment.id && (
                 <div className="edit-delete">
-                  <button
-                    className="edit-btn"
-                    onClick={() => EditComment(comment.Comment.id, i)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="delete-btn"
-                    onClick={() => Remove(comment.Comment.id, i)}
-                  >
-                    Delete
-                  </button>
+                  {!edit && (
+                    <>
+                      <button
+                        className="edit-btn"
+                        onClick={() => EditComment(i)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="delete-btn"
+                        onClick={() => Remove(comment.Comment.id, i)}
+                      >
+                        Delete
+                      </button>
+                    </>
+                  )}
+                  {edit && (
+                    <>
+                      <textarea
+                        className="edit-textarea"
+                        onChange={(e) => seteditComment(e.target.value)}
+                      ></textarea>
+                      <button
+                        onClick={() => UpdateComment(comment.Comment.id, id)}
+                      >
+                        Update
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>

@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import HomePage from "./components/HomePage";
 import Authorized from "./components/Authorized";
 import Event from "./components/Event";
+import Groups from "./components/Groups";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/event/:id">
             <Event />
+          </Route>
+          <Route path="/group">
+            <Groups />
           </Route>
         </Switch>
       )}

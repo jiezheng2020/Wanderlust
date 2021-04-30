@@ -4,6 +4,7 @@ const LOAD = "events/LOAD";
 const LOAD_ONE = "events/LOAD_ONE";
 const ADD_COMMENT = "events/ADD_COMMENT";
 const DELETE_COMMENT = "events/DELETE_COMMENT";
+const EDIT_COMMENT = "events/EDIT_COMMENT";
 
 const load = (events) => ({
   type: LOAD,
@@ -23,6 +24,11 @@ const addComment = (comment, sessionUser) => ({
 
 const deleteComment = (index) => ({
   type: DELETE_COMMENT,
+  index,
+});
+
+const editComment = (index) => ({
+  type: EDIT_COMMENT,
   index,
 });
 

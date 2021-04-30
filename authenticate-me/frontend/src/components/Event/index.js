@@ -91,11 +91,11 @@ export default function Event() {
             <div className="event-comment-box" key={i}>
               <label className="comment-username">{comment.username}: </label>
               <label>{comment.Comment.body}</label>
-              {sessionUser.id === comment.id && (
+              {sessionUser?.id === comment.id && (
                 <div className="edit-delete">
                   <button
                     className="edit-btn"
-                    onClick={() => EditComment(comment.Comment.id)}
+                    onClick={() => EditComment(comment.Comment.id, i)}
                   >
                     Edit
                   </button>

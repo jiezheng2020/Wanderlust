@@ -186,6 +186,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 0.5rem;
+}
+
+.edit-textarea {
+  width: 20vw;
 }
 
 .update-btn {

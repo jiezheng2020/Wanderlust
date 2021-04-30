@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   height: 40vh;
-  background-color: #f6f6f6;
+  background-color: #eeeeee;
 }
 
 .hero-text h1 {
@@ -85,7 +85,7 @@
 }
 
 .home-intro {
-  background-color: #f6f6f6;
+  background-color: #eeeeee;
   height: 65vh;
   display: flex;
   flex-direction: column;

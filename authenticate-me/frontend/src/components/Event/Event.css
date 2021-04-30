@@ -1,6 +1,6 @@
 .event-page {
   margin-top: 59px;
-  background-color: #f6f6f6;
+  background-color: #eeeeee;
   display: flex;
   flex-direction: column;
 }
@@ -127,8 +127,8 @@
   font-weight: 500;
 }
 .event-comment-box {
-  background-color: rgb(204, 204, 204);
-  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
   padding: 1.5rem;
   margin: 1rem 0;
 }

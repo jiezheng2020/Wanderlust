@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Event.css";
 import {
   getOneEvent,
@@ -90,7 +90,9 @@ export default function Event() {
         <img alt="" className="event-image" src={event.image} />
         <div className="event-content-text">
           <div className="event-content-group">
-            <img alt="" className="event-group-img" src={groupImg} />
+            <Link to={`/group/${event.groupId}`}>
+              <img alt="" className="event-group-img" src={groupImg} />
+            </Link>
             <div className="event-group-text">
               <label>{event.Group.name}</label>
               <p>Public group</p>

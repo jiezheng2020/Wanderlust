@@ -14,7 +14,6 @@ export const getOneGroup = (id) => async (dispatch) => {
   if (response.ok) {
     const group = await response.json();
     dispatch(load(group));
-    return group;
   }
 };
 

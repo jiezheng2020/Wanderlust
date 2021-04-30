@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "GroupCalendar",
       foreignKey: "eventId",
       otherKey: "groupId",
-      as: "Calendar",
+      as: "Calendars",
       onDelete: "CASCADE",
     });
   };

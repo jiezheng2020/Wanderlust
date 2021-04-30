@@ -79,12 +79,16 @@ router.put(
     const { eventId, commentId, userId, body } = req.body;
     const newEventId = parseInt(eventId, 10);
 
-    const Newcomment = await Comment.findOne({ where: { id: commentId } });
-    await Newcomment.update({
-      eventId: newEventId,
-      userId,
-      body,
-    });
+    await Comment.update(
+      {
+        body,
+      },
+      { where: { id: commentId } }
+    );
+
+    const newComment = await Comment.findOne({ where: { id: commentId } });
+
+    return res.json(newComment);
   })
 );
 

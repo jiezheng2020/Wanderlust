@@ -27,9 +27,11 @@ const deleteComment = (index) => ({
   index,
 });
 
-const editComment = (index) => ({
+const editComment = (comment, index, sessionUser) => ({
   type: EDIT_COMMENT,
+  comment,
   index,
+  sessionUser,
 });
 
 const sortEvent = (events) => {
@@ -71,14 +73,15 @@ export const removeComment = (payload) => async (dispatch) => {
 };
 
 export const changeComment = (payload) => async (dispatch) => {
-  const { eventId, commentId, userId, body, index } = payload;
+  const { eventId, commentId, userId, body, sessionUser, index } = payload;
+  console.log(payload, "this is index");
   const response = await csrfFetch(`/api/event/${eventId}/comment`, {
     method: "PUT",
     body: JSON.stringify({ eventId, commentId, userId, body }),
   });
   if (response.ok) {
     const newComment = await response.json();
-    // console.log(newComment);
+    dispatch(editComment(newComment, index, sessionUser));
   }
 };
 
@@ -115,6 +118,15 @@ const eventReducer = (state = {}, action) => {
     case ADD_COMMENT: {
       const newState = { ...state };
       const commentId = newState.event.Comments.length;
+      newState.event.Comments[commentId] = {
+        ...action.sessionUser,
+        Comment: action.comment,
+      };
+      return newState;
+    }
+    case EDIT_COMMENT: {
+      const newState = { ...state };
+      const commentId = action.index;
       newState.event.Comments[commentId] = {
         ...action.sessionUser,
         Comment: action.comment,

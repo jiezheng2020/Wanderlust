@@ -48,16 +48,17 @@ export default function Event() {
 
   async function UpdateComment(commentId, index) {
     setEdit(!edit);
-    console.log(updatedComment);
     const payload = {
       eventId: id,
       commentId,
       userId: sessionUser.id,
       body: updatedComment,
+      sessionUser,
       index,
     };
 
     await dispatch(changeComment(payload));
+    setuserComment(!userComment);
   }
 
   async function EditComment(comment, i) {
@@ -141,7 +142,7 @@ export default function Event() {
                         onChange={(e) => setupdatedComment(e.target.value)}
                       ></textarea>
                       <button
-                        onClick={() => UpdateComment(comment.Comment.id, id)}
+                        onClick={() => UpdateComment(comment.Comment.id, i)}
                       >
                         Update
                       </button>

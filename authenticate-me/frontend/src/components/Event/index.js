@@ -20,21 +20,23 @@ export default function Event() {
 
   useEffect(() => {
     dispatch(getOneEvent(id));
-  }, [dispatch]);
+  }, [dispatch, userComment]);
 
   if (!event) return null;
 
   const AddComment = async () => {
-    if (comment.length) setuserComment(true);
-    const payload = {
-      eventId: id,
-      userId: sessionUser.id,
-      body: comment,
-    };
-    console.log(payload);
+    if (comment.length) {
+      setuserComment(true);
+      setComment("");
+      const payload = {
+        eventId: id,
+        userId: sessionUser.id,
+        body: comment,
+        sessionUser,
+      };
 
-    const newComment = await dispatch(createEventComment(payload));
-    console.log(newComment, "comment 2");
+      await dispatch(createEventComment(payload));
+    }
   };
 
   return (
@@ -70,9 +72,9 @@ export default function Event() {
       </div>
       <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
       <div className="event-comments">
-        {event.Comments?.map((comment) => {
+        {event.Comments?.map((comment, i) => {
           return (
-            <div className="event-comment-box" key={comment.id}>
+            <div className="event-comment-box" key={i}>
               <label className="comment-username">{comment.username}: </label>
               <label>{comment.Comment.body}</label>
             </div>
@@ -84,6 +86,7 @@ export default function Event() {
           <textarea
             placeholder="Please enter a comment here"
             onChange={(e) => setComment(e.target.value)}
+            value={comment}
           ></textarea>
           {!userComment && <button onClick={AddComment}>Add</button>}
           {userComment && (

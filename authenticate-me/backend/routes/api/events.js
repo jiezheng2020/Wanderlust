@@ -26,22 +26,32 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const event = await Event.findByPk(id, {
-      include: [
-        { model: User, as: "Attendees" },
-        { model: User, as: "Comments" },
-        Group,
-        User,
-      ],
+    const comments = await Comment.findAll({
+      where: { eventId: id },
+      include: User,
     });
-    return res.json(event);
+
+    const event = await Event.findByPk(id, {
+      include: [{ model: User, as: "Attendees" }, Group, User],
+    });
+
+    let data = {
+      ...event.toJSON(),
+      Comments: [
+        ...comments.map((el) => ({
+          ...el.toJSON().User,
+          Comment: { ...el.toJSON() },
+        })),
+      ],
+    };
+
+    return res.json(data);
   })
 );
 
 router.post(
   "/:id",
   asyncHandler(async (req, res) => {
-    const id = req.params.id;
     const { eventId, userId, body } = req.body;
     const comment = await Comment.create({ eventId, userId, body });
     return res.json(comment);

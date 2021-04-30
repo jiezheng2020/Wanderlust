@@ -28,16 +28,12 @@ router.get(
   })
 );
 
-// router.post(
-//   "/:id/events",
-//   asyncHandler(async (req, res) => {
-//     const id = req.params.id;
-//     const listEvents = await GroupCalendar.findAll({
-//       where: { groupId: id },
-//     });
-
-//     return res.json(listEvents);
-//   })
-// );
+router.post(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    console.log(req.body);
+    // const newMember = await GroupMember.create(groupId, userId);
+  })
+);
 
 module.exports = router;

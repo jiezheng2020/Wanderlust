@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Redirect, Link } from "react-router-dom";
 import "./Groups.css";
-import { getOneGroup } from "../../store/groups";
+import { getOneGroup, addGroupMember } from "../../store/groups";
 
 export default function Groups() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -28,7 +28,14 @@ export default function Groups() {
     dispatch(getOneGroup(id));
   }, [dispatch, id]);
 
-  const JoinGroup = async () => {};
+  const JoinGroup = async () => {
+    const payload = {
+      userId: sessionUser.id,
+      groupId: parseInt(id, 10),
+    };
+
+    await dispatch(addGroupMember(payload));
+  };
 
   if (!sessionUser) return <Redirect to="/"></Redirect>;
   if (!group || !groupMembers || !groupEvents) return null;

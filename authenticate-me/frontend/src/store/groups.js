@@ -1,11 +1,16 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD = "groups/LOAD";
-const LOAD_EVENTS = "groups/LOAD_EVENTS";
+const ADD_MEMBER = "groups/ADD_MEMBER";
 
 const load = (group) => ({
   type: LOAD,
   group,
+});
+
+const add = (payload) => ({
+  type: ADD_MEMBER,
+  payload,
 });
 
 export const getOneGroup = (id) => async (dispatch) => {
@@ -17,6 +22,19 @@ export const getOneGroup = (id) => async (dispatch) => {
   }
 };
 
+export const addGroupMember = (payload) => async (dispatch) => {
+  const { groupId } = payload;
+  const response = await csrfFetch(`/api/group/${groupId}`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-type": "application/json" },
+  });
+
+  if (response.ok) {
+    const member = await response.json();
+    console.log(member, "this is member");
+  }
+};
 const groupReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD: {

@@ -74,7 +74,6 @@ module.exports = (sequelize, DataTypes) => {
       as: "Attendees",
       onDelete: "CASCADE",
     });
-    User.hasMany(models.Comment, { foreignKey: "userId" });
   };
 
   User.prototype.toSafeObject = function () {

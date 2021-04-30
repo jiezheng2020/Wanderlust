@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./Event.css";
-import { getOneEvent, createEventComment } from "../../store/events";
+import {
+  getOneEvent,
+  createEventComment,
+  removeComment,
+} from "../../store/events";
 
 export default function Event() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -25,7 +29,6 @@ export default function Event() {
 
   const AddComment = async () => {
     if (comment.length) {
-      setuserComment(true);
       setComment("");
       const payload = {
         eventId: id,
@@ -35,8 +38,20 @@ export default function Event() {
       };
 
       await dispatch(createEventComment(payload));
+      setuserComment(!userComment);
     }
   };
+
+  async function EditComment(id) {}
+  async function Remove(commentId, index) {
+    const payload = {
+      eventId: id,
+      commentId,
+      index,
+    };
+    await dispatch(removeComment(payload));
+    setuserComment(!userComment);
+  }
 
   return (
     <div className="event-page">
@@ -78,10 +93,16 @@ export default function Event() {
               <label>{comment.Comment.body}</label>
               {sessionUser.id === comment.id && (
                 <div className="edit-delete">
-                  <button className="edit-btn" onClick={AddComment(comment.id)}>
+                  <button
+                    className="edit-btn"
+                    onClick={() => EditComment(comment.Comment.id)}
+                  >
                     Edit
                   </button>
-                  <button className="delete-btn" onClick={AddComment}>
+                  <button
+                    className="delete-btn"
+                    onClick={() => Remove(comment.Comment.id, i)}
+                  >
                     Delete
                   </button>
                 </div>
@@ -97,7 +118,7 @@ export default function Event() {
             onChange={(e) => setComment(e.target.value)}
             value={comment}
           ></textarea>
-          {!userComment && <button onClick={AddComment}>Add</button>}
+          <button onClick={AddComment}>Add</button>
         </div>
       )}
     </div>

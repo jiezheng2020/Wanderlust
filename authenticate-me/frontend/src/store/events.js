@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const LOAD = "events/LOAD";
 const LOAD_ONE = "events/LOAD_ONE";
 const ADD_COMMENT = "events/ADD_COMMENT";
+const DELETE_COMMENT = "events/DELETE_COMMENT";
 
 const load = (events) => ({
   type: LOAD,
@@ -18,6 +19,11 @@ const addComment = (comment, sessionUser) => ({
   type: ADD_COMMENT,
   comment,
   sessionUser,
+});
+
+const deleteComment = (index) => ({
+  type: DELETE_COMMENT,
+  index,
 });
 
 const sortEvent = (events) => {
@@ -44,6 +50,17 @@ export const getOneEvent = (id) => async (dispatch) => {
     const event = await response.json();
     dispatch(loadOne(event));
     return event;
+  }
+};
+
+export const removeComment = (payload) => async (dispatch) => {
+  const { eventId, commentId, index } = payload;
+  const response = await csrfFetch(`/api/event/${eventId}/comment`, {
+    method: "DELETE",
+    body: JSON.stringify({ commentId }),
+  });
+  if (response.ok) {
+    dispatch(deleteComment(index));
   }
 };
 
@@ -85,6 +102,12 @@ const eventReducer = (state = {}, action) => {
         Comment: action.comment,
       };
       return newState;
+    }
+
+    case DELETE_COMMENT: {
+      const newState = { ...state };
+      const commentId = action.index;
+      delete newState.event.Comments[commentId];
     }
     default:
       return state;

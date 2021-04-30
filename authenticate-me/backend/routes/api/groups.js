@@ -16,10 +16,11 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
+    // const event = await Event.findAll({ where: { groupId: id } });
     const group = await Group.findByPk(id, {
       include: [
-        { model: Event, as: "Calendars" },
         { model: User, as: "Members" },
+        { model: Event, as: "Calendars" },
         User,
       ],
     });

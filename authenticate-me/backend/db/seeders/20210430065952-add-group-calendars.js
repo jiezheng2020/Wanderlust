@@ -7,13 +7,10 @@ module.exports = {
 
     const groups = await models.Group.findAll();
     const event = await models.Event.findAll();
-    for (let i = 0; i < 200; i++) {
-      const randGroup = Math.floor(Math.random() * groups.length + 1);
-      const randEvent = Math.floor(Math.random() * event.length + 1);
-
+    for (let i = 0; i < event.length; i++) {
       let newCalendar = {
-        groupId: randGroup,
-        eventId: randEvent,
+        groupId: event[i].groupId,
+        eventId: event[i].id,
       };
       CalendarData.push(newCalendar);
     }

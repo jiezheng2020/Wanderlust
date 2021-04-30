@@ -16,12 +16,7 @@ module.exports = {
       ];
       const randId = Math.floor(Math.random() * users.length + 1);
       const randName = Math.floor(Math.random() * name.length);
-      const randlocation =
-        faker.address.streetAddress() +
-        " " +
-        faker.address.city() +
-        " " +
-        faker.address.country();
+      const randlocation = faker.address.city();
 
       let newGroup = {
         name: name[randName],

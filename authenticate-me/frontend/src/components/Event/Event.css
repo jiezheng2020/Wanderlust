@@ -28,6 +28,9 @@
   font-weight: 600;
 }
 
+.joined-event-text {
+  font-weight: 500 !important;
+}
 .event-content {
   display: flex;
   flex-direction: row;

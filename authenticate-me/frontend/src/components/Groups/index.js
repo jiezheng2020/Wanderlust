@@ -38,11 +38,10 @@ export default function Groups() {
     setjoinGroup(!joinedGroup);
   };
 
-  if (!sessionUser) return <Redirect to="/"></Redirect>;
   if (!group || !groupMembers || !groupEvents) return null;
 
   const joinGroupBool =
-    groupMembers?.filter((user) => user.id === sessionUser.id).length === 0;
+    groupMembers?.filter((user) => user?.id === sessionUser?.id).length === 0;
 
   return (
     <div className="group-page">

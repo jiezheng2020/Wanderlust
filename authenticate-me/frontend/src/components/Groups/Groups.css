@@ -102,23 +102,24 @@
   background-color: rgb(53, 53, 187);
 }
 
-.upcoming-events-container {
-  display: flex;
-  justify-content: center;
-  width: 99vw;
-  height: 50vh;
-  background-color: #f6f6f6;
-}
 .upcoming-events {
   width: 50vw;
-  height: fit-content;
-  background-color: red;
+  max-height: 50vh;
+  margin-bottom: 5vh;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  overflow: auto;
 }
 
+.test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .event-row {
-  width: 40vw;
+  background-color: rgb(43, 43, 43);
+  border-radius: 10px;
+  width: 45vw;
   height: 10vh;
-  background-color: rgb(255, 181, 181);
-  border-radius: 5px;
-  margin-bottom: 2vh;
+  margin-top: 1.5vh;
 }

@@ -51,17 +51,24 @@ export default function Groups() {
           {group.description}
         </div>
         <div className="group-about-members">
-          <h2>Members(10)</h2>
+          <h2>Members({groupMembers.length})</h2>
           <div className="group-members">MEMBER</div>
         </div>
       </div>
       <div className="upcoming-events-container">
+        <h2>Upcoming Events({groupEvents.length})</h2>
         <div className="upcoming-events">
-          <h2>Upcoming Events(10)</h2>
-          <div className="event-row">EVENT ROW</div>
-          <div className="event-row">EVENT ROW</div>
-          <div className="event-row">EVENT ROW</div>
-          <div className="event-row">EVENT ROW</div>
+          <div className="test">
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+            <div className="event-row">EVENT ROW</div>
+          </div>
         </div>
       </div>
     </div>

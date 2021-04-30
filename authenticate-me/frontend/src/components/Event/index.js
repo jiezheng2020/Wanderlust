@@ -7,6 +7,7 @@ import {
   createEventComment,
   removeComment,
   changeComment,
+  addEventMember,
 } from "../../store/events";
 
 export default function Event() {
@@ -84,6 +85,16 @@ export default function Event() {
     await dispatch(removeComment(payload));
   }
 
+  const JoinEvent = async () => {
+    const payload = {
+      userId: sessionUser.id,
+      eventId: parseInt(id, 10),
+    };
+
+    await dispatch(addEventMember(payload));
+    setjoinEvent(!joinedEvent);
+  };
+
   return (
     <div className="event-page">
       <div className="event-header">
@@ -91,12 +102,12 @@ export default function Event() {
         <h2>{event.name}</h2>
         <h4>Hosted by {event.User.username}</h4>
         {sessionUser && joinedEventBool && (
-          <button className="request-btn">Join Event</button>
+          <button className="request-btn" onClick={() => JoinEvent()}>
+            Join Event
+          </button>
         )}
         {sessionUser && !joinedEventBool && (
-          <p className="joined-event-text">
-            You are already RSVP'd for the event
-          </p>
+          <p className="joined-event-text">You are RSVP'd for the event</p>
         )}
       </div>
       <div className="event-content">

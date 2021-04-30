@@ -88,7 +88,7 @@ export const changeComment = (payload) => async (dispatch) => {
 export const createEventComment = (payload) => async (dispatch) => {
   const id = payload.eventId;
   const { eventId, userId, body, sessionUser } = payload;
-  const response = await csrfFetch(`/api/event/${id}`, {
+  const response = await csrfFetch(`/api/event/${id}/comment`, {
     method: "POST",
     body: JSON.stringify({ eventId, userId, body }),
     headers: { "Content-Type": "application/json" },
@@ -98,6 +98,19 @@ export const createEventComment = (payload) => async (dispatch) => {
     const comment = await response.json();
     dispatch(addComment(comment, sessionUser));
     return comment;
+  }
+};
+
+export const addEventMember = (payload) => async (dispatch) => {
+  const { eventId } = payload;
+  const response = await csrfFetch(`/api/event/${eventId}`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    const member = await response.json();
   }
 };
 

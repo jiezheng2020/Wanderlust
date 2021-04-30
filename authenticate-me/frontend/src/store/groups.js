@@ -1,16 +1,10 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD = "groups/LOAD";
-const ADD_MEMBER = "groups/ADD_MEMBER";
 
 const load = (group) => ({
   type: LOAD,
   group,
-});
-
-const add = (payload) => ({
-  type: ADD_MEMBER,
-  payload,
 });
 
 export const getOneGroup = (id) => async (dispatch) => {

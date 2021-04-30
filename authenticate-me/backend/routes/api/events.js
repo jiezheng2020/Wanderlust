@@ -56,6 +56,16 @@ router.get(
 router.post(
   "/:id",
   asyncHandler(async (req, res) => {
+    const { userId, eventId } = req.body;
+    const newMember = await EventAttendee.create({ eventId, userId });
+
+    return res.json(newMember);
+  })
+);
+
+router.post(
+  "/:id/comment",
+  asyncHandler(async (req, res) => {
     const { eventId, userId, body } = req.body;
     const comment = await Comment.create({ eventId, userId, body });
     return res.json(comment);

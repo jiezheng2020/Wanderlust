@@ -13,8 +13,11 @@ module.exports = {
         "This group has good events! Would recommend!",
         "Sounds fun",
         "Excited",
-        faker.commerce.productAdjective(),
-        faker.hacker.phrase(),
+        "Sounds expensive....",
+        "Heard good things about this one!",
+        "Friend recommended I check this out, can't wait.",
+        "Who should I contact for more details?",
+        "Can't wait!",
       ];
       const randBody = Math.floor(Math.random() * bodyArr.length);
       const randEvent = Math.floor(Math.random() * events.length + 1);

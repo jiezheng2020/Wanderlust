@@ -22,7 +22,7 @@ module.exports = {
         name: name[randName],
         location: randlocation,
         organizerId: randId,
-        description: faker.hacker.phrase(),
+        description: faker.lorem.paragraphs(),
       };
       GroupsData.push(newGroup);
     }

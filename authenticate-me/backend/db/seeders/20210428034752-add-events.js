@@ -35,7 +35,7 @@ module.exports = {
           "https://planning-org-uploaded-media.s3.amazonaws.com/image/Planning-2020-02-image26.jpg";
       let newEvent = {
         name: names[randName],
-        detailsBody: faker.hacker.phrase(),
+        detailsBody: faker.lorem.paragraphs(),
         detailsTime: date,
         image: randImage,
         groupId: randGroup,

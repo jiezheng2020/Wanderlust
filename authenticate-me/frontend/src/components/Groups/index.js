@@ -35,10 +35,10 @@ export default function Groups() {
         <img alt="" className="group-image" src={groupImg} />
         <div className="group-content-text">
           <div className="group-content-group">
-            <h1>Online Movie Group Discussion</h1>
-            <p>107 members | Public Group</p>
-            <p>Organized by Mindy</p>
-            <p>Chicago,IL</p>
+            <h1>{group.name}</h1>
+            <p>{groupMembers.length} members | Public Group</p>
+            <p>Organized by {group.User.username}</p>
+            <p>Located at {group.location}</p>
             {sessionUser && (
               <button className="join-group-btn"> Join Group</button>
             )}
@@ -48,18 +48,7 @@ export default function Groups() {
       <div className="group-about">
         <div className="group-about-text">
           <h2>What we're about</h2>
-          Welcome cinephiles. If there was any positive to the pandemic, is that
-          it opened up Meetup groups to members from around the world (time zone
-          permitting). In that spirit, we created the Online Movie Discussion
-          Group, a U.S./Canadian effort to continue movie discussions with
-          friends local and abroad. We hope you will join us. The films
-          discussed in this group will be wide-ranging - classic/modern,
-          foreign/domestic, serious/cult, and everything in between. The films
-          will be available to stream. Discussions will take place on Zoom (a
-          different online platform may be announced at a later date). Caveat to
-          joining: Due to spaces often being taken up by no-shows, we will
-          remove those who are no-shows two times. Fake accounts and nasty
-          people also will not be tolerated.
+          {group.description}
         </div>
         <div className="group-about-members">
           <h2>Members(10)</h2>

@@ -29,6 +29,10 @@ router.get(
     const comments = await Comment.findAll({
       where: { eventId: id },
       include: User,
+      attributes: {
+        exclude: [],
+        include: ["id"],
+      },
     });
 
     const event = await Event.findByPk(id, {

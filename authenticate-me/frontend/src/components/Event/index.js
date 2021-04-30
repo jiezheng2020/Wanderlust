@@ -77,6 +77,16 @@ export default function Event() {
             <div className="event-comment-box" key={i}>
               <label className="comment-username">{comment.username}: </label>
               <label>{comment.Comment.body}</label>
+              {sessionUser.id === comment.id && (
+                <div className="edit-delete">
+                  <button className="edit-btn" onClick={AddComment}>
+                    Edit
+                  </button>
+                  <button className="delete-btn" onClick={AddComment}>
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           );
         })}
@@ -89,16 +99,6 @@ export default function Event() {
             value={comment}
           ></textarea>
           {!userComment && <button onClick={AddComment}>Add</button>}
-          {userComment && (
-            <div className="edit-delete">
-              <button className="edit-btn" onClick={AddComment}>
-                Edit
-              </button>
-              <button className="delete-btn" onClick={AddComment}>
-                Delete
-              </button>
-            </div>
-          )}
         </div>
       )}
     </div>

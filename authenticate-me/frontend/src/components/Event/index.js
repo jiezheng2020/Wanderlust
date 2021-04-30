@@ -135,18 +135,19 @@ export default function Event() {
                     </>
                   )}
                   {edit && currentComment === i && (
-                    <>
+                    <div className="update-area">
                       <textarea
                         className="edit-textarea"
                         value={updatedComment}
                         onChange={(e) => setupdatedComment(e.target.value)}
                       ></textarea>
                       <button
+                        className="update-btn"
                         onClick={() => UpdateComment(comment.Comment.id, i)}
                       >
                         Update
                       </button>
-                    </>
+                    </div>
                   )}
                 </div>
               )}

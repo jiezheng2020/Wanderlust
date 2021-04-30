@@ -144,7 +144,9 @@
   width: 28vw;
 }
 
-.comment-submit button {
+.comment-submit button,
+.delete-btn,
+.edit-btn {
   width: fit-content;
   background-color: #ed1c40;
   opacity: 0.8;
@@ -158,11 +160,6 @@
   padding-left: 0.7rem;
   border-radius: 0.4rem;
   transition: opacity 0.3s;
-}
-
-.comment-submit button:hover,
-.request-btn:hover {
-  opacity: 1;
 }
 
 .delete-btn {
@@ -183,4 +180,34 @@
   border-radius: 0.4rem;
   transition: opacity 0.3s;
   margin-bottom: 1rem;
+}
+
+.update-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.update-btn {
+  width: fit-content;
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-left: 1rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.comment-submit button:hover,
+.request-btn:hover,
+.delete-btn:hover,
+.edit-btn:hover,
+.update-btn:hover {
+  opacity: 1;
 }

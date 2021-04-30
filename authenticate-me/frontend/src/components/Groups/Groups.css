@@ -62,6 +62,11 @@
   opacity: 1;
 }
 
+.group-member-confirm {
+  margin-top: 2vh !important;
+  font-weight: 400 !important;
+}
+
 .group-about {
   display: flex;
   flex-direction: column;

@@ -18,16 +18,16 @@ router.get(
   })
 );
 
-router.get(
-  "/:id/events",
-  asyncHandler(async (req, res) => {
-    const id = req.params.id;
-    const listEvents = await GroupCalendar.findAll({
-      where: { groupId: id },
-    });
+// router.get(
+//   "/:id/events",
+//   asyncHandler(async (req, res) => {
+//     const id = req.params.id;
+//     const listEvents = await GroupCalendar.findAll({
+//       where: { groupId: id },
+//     });
 
-    return res.json(listEvents);
-  })
-);
+//     return res.json(listEvents);
+//   })
+// );
 
 module.exports = router;

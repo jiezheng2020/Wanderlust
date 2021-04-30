@@ -46,14 +46,8 @@ export default function Groups() {
         </div>
       </div>
       <div className="group-about">
-        <div className="group-about-text">
-          <h2>What we're about</h2>
-          {group.description}
-        </div>
-        <div className="group-about-members">
-          <h2>Members({groupMembers.length})</h2>
-          <div className="group-members">MEMBER</div>
-        </div>
+        <h2>What we're about</h2>
+        <div className="group-about-text">{group.description}</div>
       </div>
       <div className="upcoming-events-container">
         <h2>Upcoming Events({groupEvents.length})</h2>

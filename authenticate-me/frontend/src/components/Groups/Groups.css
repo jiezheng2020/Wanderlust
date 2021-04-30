@@ -1,0 +1,124 @@
+.group-page {
+  margin-top: 59px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.group-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 43vh;
+}
+
+.group-image {
+  width: 25vw;
+  max-height: auto;
+  margin-right: 2vw;
+}
+
+.group-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2rem;
+  width: 20vw;
+}
+
+.group-content-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 15vh;
+}
+
+.group-content-group p {
+  margin: 0.2rem 0;
+  font-weight: 500;
+}
+
+.join-group-btn {
+  width: fit-content;
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+  margin-bottom: 1rem;
+}
+
+.join-group-btn:hover {
+  opacity: 1;
+}
+
+.group-about {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 99vw;
+  max-height: 40vh;
+  background-color: #f6f6f6;
+  border-top: solid #d3d3d3;
+  border-width: thin;
+  padding-top: 2rem;
+}
+
+.group-about-text {
+  width: 25vw;
+  height: 30vh;
+}
+
+.group-about-text h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.group-about-members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  height: 30vh;
+}
+
+.group-about-members h2 {
+  margin: 0 3vw;
+}
+.group-members {
+  width: 20vw;
+  height: 20vh;
+  background-color: rgb(53, 53, 187);
+}
+
+.upcoming-events-container {
+  display: flex;
+  justify-content: center;
+  width: 99vw;
+  height: 50vh;
+  background-color: #f6f6f6;
+}
+.upcoming-events {
+  width: 50vw;
+  height: fit-content;
+  background-color: red;
+}
+
+.event-row {
+  width: 40vw;
+  height: 10vh;
+  background-color: rgb(255, 181, 181);
+  border-radius: 5px;
+  margin-bottom: 2vh;
+}

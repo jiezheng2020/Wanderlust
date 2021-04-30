@@ -33,11 +33,8 @@ export default function Groups() {
   if (!sessionUser) return <Redirect to="/"></Redirect>;
   if (!group || !groupMembers || !groupEvents) return null;
 
-  const userInGroup = groupMembers?.filter(
-    (user) => user.id === sessionUser.id
-  );
-
-  console.log(userInGroup.length === 0);
+  const joinGroupBool =
+    groupMembers?.filter((user) => user.id === sessionUser.id).length === 0;
 
   return (
     <div className="group-page">
@@ -49,12 +46,12 @@ export default function Groups() {
             <p>{groupMembers.length} members | Public Group</p>
             <p>Organized by {group.User.username}</p>
             <p>Located at {group.location}</p>
-            {sessionUser && !userInGroup.length === 0 && (
+            {sessionUser && joinGroupBool && (
               <button className="join-group-btn" onClick={() => JoinGroup()}>
                 Join Group
               </button>
             )}
-            {!userInGroup.length === 0 && (
+            {!joinGroupBool && (
               <p className="group-member-confirm">
                 You are a member of this group
               </p>

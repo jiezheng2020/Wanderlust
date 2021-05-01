@@ -1,9 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import DemoUser from "../DemoUser";
 import SignupFormModal from "../SignupFormModal";
+import CreateGroupModal from "../CreateGroupModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -11,7 +12,12 @@ function Navigation({ isLoaded }) {
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = (
+      <>
+        <CreateGroupModal />
+        <ProfileButton user={sessionUser} />
+      </>
+    );
   } else {
     sessionLinks = (
       <>

@@ -1,0 +1,60 @@
+.start-group-btn {
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  margin-right: 1rem;
+  transition: opacity 0.3s;
+}
+
+.start-group-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.start-group-label {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.create-group-fields label {
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+.create-group-fields input {
+  height: 2vh;
+}
+
+.create-group-fields textarea {
+  height: 6vh;
+}
+
+.create-group-page {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  height: 50vh;
+}
+
+.create-group-box {
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-group-fields {
+  width: 35vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

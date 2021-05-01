@@ -32,6 +32,10 @@
   padding-right: 1rem;
 }
 
+.start-group-link {
+  color: #2f8ba2;
+}
+
 a {
   color: rgb(0, 0, 0);
   font-weight: bold;

@@ -1,17 +1,29 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import * as sessionActions from "../../store/session";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./CreateGroup.css";
+import { addNewGroup } from "../../store/groups";
 
 function CreateGroup() {
+  const sessionUser = useSelector((state) => state.session.user);
+  const history = useHistory();
   const dispatch = useDispatch();
   const [name, setname] = useState("");
   const [location, setlocation] = useState("");
   const [description, setdescription] = useState("");
-  const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const payload = {
+      name,
+      location,
+      organizerId: sessionUser.id,
+      description,
+    };
+
+    const newGroup = await dispatch(addNewGroup(payload));
+    history.push(`/group/${newGroup.id}`);
   };
 
   return (
@@ -48,13 +60,6 @@ function CreateGroup() {
           <button className="start-group-btn" type="submit">
             Create Group
           </button>
-        </div>
-        <div className="create-group-errors">
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
-            ))}
-          </ul>
         </div>
       </form>
     </div>

@@ -43,6 +43,8 @@ export default function Groups() {
   const joinGroupBool =
     groupMembers?.filter((user) => user?.id === sessionUser?.id).length === 0;
 
+  const organizerBool = sessionUser.id === group.organizerId;
+
   return (
     <div className="group-page">
       <div className="group-content">
@@ -53,12 +55,12 @@ export default function Groups() {
             <p>{groupMembers.length} members | Public Group</p>
             <p>Organized by {group.User.username}</p>
             <p>Located at {group.location}</p>
-            {sessionUser && joinGroupBool && (
+            {!organizerBool && sessionUser && joinGroupBool && (
               <button className="join-group-btn" onClick={() => JoinGroup()}>
                 Join Group
               </button>
             )}
-            {!joinGroupBool && (
+            {(!joinGroupBool || organizerBool) && (
               <p className="group-member-confirm">
                 You are a member of this group
               </p>

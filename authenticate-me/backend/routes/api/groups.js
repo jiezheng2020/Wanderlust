@@ -12,6 +12,21 @@ const {
 
 const router = express.Router();
 
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const { name, location, organizerId, description } = req.body;
+    const newGroup = await Group.create({
+      name,
+      location,
+      organizerId,
+      description,
+    });
+
+    return res.json(newGroup);
+  })
+);
+
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {

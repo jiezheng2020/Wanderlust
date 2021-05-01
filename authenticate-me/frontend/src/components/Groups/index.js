@@ -60,9 +60,14 @@ export default function Groups() {
                 Join Group
               </button>
             )}
-            {(!joinGroupBool || organizerBool) && (
+            {!joinGroupBool && !organizerBool && (
               <p className="group-member-confirm">
                 You are a member of this group
+              </p>
+            )}
+            {organizerBool && (
+              <p className="group-member-confirm">
+                You are the owner of this group
               </p>
             )}
           </div>
@@ -73,25 +78,38 @@ export default function Groups() {
         <div className="group-about-text">{group.description}</div>
       </div>
       <div className="upcoming-events-container">
-        <h2>Upcoming Events({groupEvents.length})</h2>
-        <div className="upcoming-events">
-          <div className="test">
-            {group.Calendars.map((event, i) => {
-              return (
-                <Link key={i} to={`/event/${event.id}`}>
-                  <div className="event-row">
-                    <img src={event.image} />
-                    <div className="event-row-text">
-                      <h4 className="event-row-time">{event.detailsTime}</h4>
-                      <h3>{event.name}</h3>
-                      <h4 className="event-row-body">{event.detailsBody}</h4>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+        {group.Calendars?.length !== 0 && (
+          <>
+            <h2>Upcoming Events({groupEvents.length})</h2>
+            <div className="upcoming-events">
+              <div className="test">
+                {group.Calendars.map((event, i) => {
+                  return (
+                    <Link key={i} to={`/event/${event.id}`}>
+                      <div className="event-row">
+                        <img src={event.image} />
+                        <div className="event-row-text">
+                          <h4 className="event-row-time">
+                            {event.detailsTime}
+                          </h4>
+                          <h3>{event.name}</h3>
+                          <h4 className="event-row-body">
+                            {event.detailsBody}
+                          </h4>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        )}
+        {group.Calendars?.length === 0 && (
+          <div className="no-groups">
+            This group currently has no events organized
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

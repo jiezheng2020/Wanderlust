@@ -81,7 +81,7 @@
 
 .group-about h2 {
   align-self: flex-start;
-  margin-left: 25vw;
+  margin-left: 24vw;
   font-size: 1.5rem;
 }
 .group-about-text {
@@ -102,11 +102,12 @@
   align-items: center;
   width: 99.1vw;
   background-color: #eeeeee;
+  min-height: 38vh;
 }
 
 .upcoming-events-container h2 {
   align-self: flex-start;
-  margin-left: 25vw;
+  margin-left: 24vw;
   font-size: 1.5rem;
   margin-bottom: 3vh;
 }
@@ -159,4 +160,18 @@
 
 .event-row-body {
   font-weight: 400;
+}
+
+.no-groups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: rgb(196, 196, 196);
+  border: solid rgb(185, 185, 185);
+  border-width: thin;
+  font-weight: 600;
 }

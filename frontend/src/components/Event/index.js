@@ -81,8 +81,8 @@ export default function Event() {
       index,
     };
 
-    setuserComment(!userComment);
     await dispatch(removeComment(payload));
+    setuserComment(!userComment);
   }
 
   const JoinEvent = async () => {

@@ -39,7 +39,6 @@ export const addNewGroup = (payload) => async (dispatch) => {
 
   if (response.ok) {
     const newGroup = await response.json();
-    console.log(newGroup);
     return newGroup;
   }
 };

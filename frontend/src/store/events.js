@@ -74,7 +74,6 @@ export const removeComment = (payload) => async (dispatch) => {
 
 export const changeComment = (payload) => async (dispatch) => {
   const { eventId, commentId, userId, body, sessionUser, index } = payload;
-  console.log(payload, "this is index");
   const response = await csrfFetch(`/api/event/${eventId}/comment`, {
     method: "PUT",
     body: JSON.stringify({ eventId, commentId, userId, body }),

@@ -43,7 +43,7 @@ export default function Groups() {
   const joinGroupBool =
     groupMembers?.filter((user) => user?.id === sessionUser?.id).length === 0;
 
-  const organizerBool = sessionUser.id === group.organizerId;
+  const organizerBool = sessionUser?.id === group?.organizerId;
 
   return (
     <div className="group-page">

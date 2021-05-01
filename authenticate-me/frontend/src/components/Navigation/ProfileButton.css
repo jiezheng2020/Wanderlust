@@ -20,6 +20,18 @@
   margin: 0.25rem 0;
 }
 
+.userprof-btn {
+  background-color: #cacaca;
+  border: none;
+  padding: 0.3rem 0.4rem;
+  border-radius: 100%;
+  margin-right: 1rem;
+  transition: background-color 0.5s;
+}
+
+.userprof-btn:hover {
+  background-color: #969696;
+}
 .userprof-link {
   background-color: #ed1c40;
   opacity: 0.8;

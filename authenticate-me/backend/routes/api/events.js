@@ -33,6 +33,7 @@ router.get(
         exclude: [],
         include: ["id"],
       },
+      order: [["createdAt", "ASC"]],
     });
 
     const event = await Event.findByPk(id, {

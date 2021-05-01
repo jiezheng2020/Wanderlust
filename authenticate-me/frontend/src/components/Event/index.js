@@ -133,7 +133,6 @@ export default function Event() {
       </div>
       <div className="event-attendees">
         <h3>{`Attendees (${event.Attendees.length})`}</h3>
-        <div>List of Attendees</div>
       </div>
       <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
       <div className="event-comments">

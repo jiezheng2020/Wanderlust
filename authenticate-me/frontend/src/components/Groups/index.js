@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Redirect, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Groups.css";
 import { getOneGroup, addGroupMember } from "../../store/groups";
 
@@ -87,7 +87,7 @@ export default function Groups() {
                   return (
                     <Link key={i} to={`/event/${event.id}`}>
                       <div className="event-row">
-                        <img src={event.image} />
+                        <img alt="" src={event.image} />
                         <div className="event-row-text">
                           <h4 className="event-row-time">
                             {event.detailsTime}

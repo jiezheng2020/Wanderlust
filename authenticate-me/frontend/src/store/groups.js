@@ -26,6 +26,7 @@ export const addGroupMember = (payload) => async (dispatch) => {
 
   if (response.ok) {
     const member = await response.json();
+    return member;
   }
 };
 

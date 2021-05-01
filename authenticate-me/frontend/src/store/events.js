@@ -111,6 +111,7 @@ export const addEventMember = (payload) => async (dispatch) => {
 
   if (response.ok) {
     const member = await response.json();
+    return member;
   }
 };
 
@@ -151,6 +152,7 @@ const eventReducer = (state = {}, action) => {
       const newState = { ...state };
       const commentId = action.index;
       delete newState.event.Comments[commentId];
+      return newState;
     }
     default:
       return state;

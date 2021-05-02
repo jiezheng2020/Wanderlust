@@ -1,6 +1,6 @@
 .group-page {
   margin-top: 59px;
-  background-color: #ffffff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +75,7 @@
   width: 99.1vw;
   max-height: 40vh;
   background-color: #f6f7f8;
-  border-top: solid #d3d3d3;
+  border-top: 1px solid rgba(46, 62, 72, 0.12);
   border-width: thin;
 }
 

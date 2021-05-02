@@ -98,7 +98,7 @@ export default function Event() {
   return (
     <div className="event-page">
       <div className="event-header">
-        <h4>{event.detailsTime}</h4>
+        <h4 className="event-header-time">{event.detailsTime}</h4>
         <h2>{event.name}</h2>
         <h4>Hosted by {event.User.username}</h4>
         {sessionUser && joinedEventBool && (

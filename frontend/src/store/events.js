@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const LOAD = "events/LOAD";
 const LOAD_ONE = "events/LOAD_ONE";
+const LOAD_USER = "events/LOAD_USER";
 const ADD_COMMENT = "events/ADD_COMMENT";
 const DELETE_COMMENT = "events/DELETE_COMMENT";
 const EDIT_COMMENT = "events/EDIT_COMMENT";
@@ -14,6 +15,11 @@ const load = (events) => ({
 const loadOne = (event) => ({
   type: LOAD_ONE,
   event,
+});
+
+const loadUser = (events) => ({
+  type: LOAD_USER,
+  events,
 });
 
 const addComment = (comment, sessionUser) => ({
@@ -48,6 +54,16 @@ export const getEvents = () => async (dispatch) => {
   if (response.ok) {
     const events = await response.json();
     dispatch(load(events));
+  }
+};
+
+export const getUserEvents = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/event/user/${id}`);
+
+  if (response.ok) {
+    const events = await response.json();
+    // dispatch(loadUser(events));
+    return events;
   }
 };
 

@@ -114,7 +114,7 @@ export default function Authorized() {
             </div>
           </div>
         </div>
-        <div className="events-content row2">
+        <div className="events-content">
           <div className="event-text-row">
             <h1>More Events By {events[0].Group.name}</h1>
             <Link to="/">See All</Link>

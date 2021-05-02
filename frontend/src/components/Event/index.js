@@ -110,86 +110,94 @@ export default function Event() {
           <p className="joined-event-text">You are RSVP'd for the event</p>
         )}
       </div>
-      <div className="event-content">
-        <img alt="" className="event-image" src={event.image} />
-        <div className="event-content-text">
-          <div className="event-content-group">
-            <Link to={`/group/${event.groupId}`}>
-              <img alt="" className="event-group-img" src={groupImg} />
-            </Link>
-            <div className="event-group-text">
-              <label>{event.Group.name}</label>
-              <p>Public group</p>
-            </div>
+      <div className="event-column-container">
+        <div className="event-column-1">
+          <div>
+            <img alt="" className="event-image" src={event.image} />
           </div>
-          <div className="event-content-time">
-            <label>Event will take place on {event.detailsTime}</label>
+          <div className="event-details">
+            <h2>Details</h2>
+            <p className="event-details-p">{event.detailsBody}</p>
           </div>
-        </div>
-      </div>
-      <div className="event-details">
-        <h2>Details</h2>
-        <p className="event-details-p">{event.detailsBody}</p>
-      </div>
-      <div className="event-attendees">
-        <h3>{`Attendees (${event.Attendees.length})`}</h3>
-      </div>
-      <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
-      <div className="event-comments">
-        {event.Comments?.map((comment, i) => {
-          return (
-            <div className="event-comment-box" key={i}>
-              <label className="comment-username">{comment.username}: </label>
-              <label>{comment.Comment.body}</label>
-              {sessionUser?.id === comment.id && (
-                <div className="edit-delete">
-                  {!edit && (
-                    <>
-                      <button
-                        className="edit-btn"
-                        onClick={() => EditComment(comment.Comment.body, i)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="delete-btn"
-                        onClick={() => Remove(comment.Comment.id, i)}
-                      >
-                        Delete
-                      </button>
-                    </>
-                  )}
-                  {edit && currentComment === i && (
-                    <div className="update-area">
-                      <textarea
-                        className="edit-textarea"
-                        value={updatedComment}
-                        onChange={(e) => setupdatedComment(e.target.value)}
-                      ></textarea>
-                      <button
-                        className="update-btn"
-                        onClick={() => UpdateComment(comment.Comment.id, i)}
-                      >
-                        Update
-                      </button>
+          <div className="event-attendees">
+            <h3>{`Attendees (${event.Attendees.length})`}</h3>
+          </div>
+          <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
+          <div className="event-comments">
+            {event.Comments?.map((comment, i) => {
+              return (
+                <div className="event-comment-box" key={i}>
+                  <label className="comment-username">
+                    {comment.username}:{" "}
+                  </label>
+                  <label>{comment.Comment.body}</label>
+                  {sessionUser?.id === comment.id && (
+                    <div className="edit-delete">
+                      {!edit && (
+                        <>
+                          <button
+                            className="edit-btn"
+                            onClick={() => EditComment(comment.Comment.body, i)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="delete-btn"
+                            onClick={() => Remove(comment.Comment.id, i)}
+                          >
+                            Delete
+                          </button>
+                        </>
+                      )}
+                      {edit && currentComment === i && (
+                        <div className="update-area">
+                          <textarea
+                            className="edit-textarea"
+                            value={updatedComment}
+                            onChange={(e) => setupdatedComment(e.target.value)}
+                          ></textarea>
+                          <button
+                            className="update-btn"
+                            onClick={() => UpdateComment(comment.Comment.id, i)}
+                          >
+                            Update
+                          </button>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
-              )}
+              );
+            })}
+          </div>
+          {sessionUser && (
+            <div className="comment-submit">
+              <textarea
+                placeholder="Please enter a comment here"
+                onChange={(e) => setaddComment(e.target.value)}
+                value={addcomment}
+              ></textarea>
+              <button onClick={AddComment}>Add</button>
             </div>
-          );
-        })}
-      </div>
-      {sessionUser && (
-        <div className="comment-submit">
-          <textarea
-            placeholder="Please enter a comment here"
-            onChange={(e) => setaddComment(e.target.value)}
-            value={addcomment}
-          ></textarea>
-          <button onClick={AddComment}>Add</button>
+          )}
         </div>
-      )}
+        <div className="event-column-2">
+          <div className="event-content-text">
+            <div className="event-content-group">
+              <Link to={`/group/${event.groupId}`}>
+                <img alt="" className="event-group-img" src={groupImg} />
+              </Link>
+              <div className="event-group-text">
+                <label>{event.Group.name}</label>
+                <p>Public group</p>
+              </div>
+              <div className="event-content-time">
+                <label>Event will take place on {event.detailsTime}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

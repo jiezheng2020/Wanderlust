@@ -15,7 +15,7 @@ const router = express.Router();
 router.get(
   "/user/:id",
   asyncHandler(async (req, res) => {
-    const id = req.body;
+    const id = req.params.id;
     const events = await EventAttendee.findAll({
       where: { userId: id },
     });

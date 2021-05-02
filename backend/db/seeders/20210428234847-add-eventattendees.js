@@ -4,6 +4,7 @@ const models = require("../models");
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const AttendeeData = [];
+    const unique = [];
 
     const events = await models.Event.findAll();
     const user = await models.User.findAll();
@@ -11,6 +12,9 @@ module.exports = {
     for (let i = 0; i < 1000; i++) {
       const randEvent = Math.floor(Math.random() * events.length + 1);
       const randUser = Math.floor(Math.random() * user.length + 1);
+
+      if (unique.includes(`${randEvent}${randUser}`)) continue;
+      unique.push(`${randEvent}${randUser}`);
 
       let newAttendee = {
         eventId: randEvent,

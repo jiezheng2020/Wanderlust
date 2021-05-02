@@ -101,6 +101,7 @@
   height: 10vh;
   margin: auto;
 }
+
 .event-group-text {
   font-size: 0.9rem;
 }
@@ -132,7 +133,6 @@
 }
 
 .event-comments {
-  /* max-width: 28vw; */
   max-height: 40vh;
   overflow: auto;
   margin-bottom: 1.5rem;
@@ -154,10 +154,6 @@
   flex-direction: column;
   margin-bottom: 10vh;
 }
-
-/* .comment-submit textarea {
-  width: 28vw;
-} */
 
 .comment-submit button,
 .delete-btn,

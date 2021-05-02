@@ -146,7 +146,7 @@ const eventReducer = (state = {}, action) => {
     case LOAD_USER: {
       return {
         ...state,
-        ...action.events,
+        UserEvents: action.events,
       };
     }
     case ADD_COMMENT: {

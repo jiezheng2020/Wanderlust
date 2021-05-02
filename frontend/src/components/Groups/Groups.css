@@ -90,6 +90,7 @@
   width: 51vw;
   margin-bottom: 2vh;
   max-height: 30vh;
+  white-space: pre-line;
 }
 
 .group-about-text h2 {

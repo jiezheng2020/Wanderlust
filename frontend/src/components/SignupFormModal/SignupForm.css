@@ -6,10 +6,16 @@ div#modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
   min-width: 20vw;
   min-height: 32vh;
 }
 
+.signup-label {
+  font-weight: 600;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
 .signup-fields {
   display: flex;
   flex-direction: column;

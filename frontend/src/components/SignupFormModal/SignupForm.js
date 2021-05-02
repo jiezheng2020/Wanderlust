@@ -31,6 +31,7 @@ function SignupForm() {
     <div className="signup-page">
       <form onSubmit={handleSubmit}>
         <div className="signup-box">
+          <label className="signup-label">Sign Up</label>
           <div className="signup-fields">
             <label>Email</label>
             <input

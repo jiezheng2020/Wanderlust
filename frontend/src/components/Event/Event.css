@@ -106,6 +106,11 @@
   max-width: 28vw;
 }
 
+.event-details-p {
+  white-space: pre-line;
+  font-weight: 300;
+}
+
 .event-attendees {
   margin-top: 1vh;
   padding-left: 23vw;

@@ -129,7 +129,7 @@ export default function Event() {
       </div>
       <div className="event-details">
         <h2>Details</h2>
-        {event.detailsBody}
+        <p className="event-details-p">{event.detailsBody}</p>
       </div>
       <div className="event-attendees">
         <h3>{`Attendees (${event.Attendees.length})`}</h3>

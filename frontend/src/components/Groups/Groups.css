@@ -11,13 +11,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 43vh;
+  height: 38vh;
 }
 
 .group-image {
   width: 25vw;
   max-height: auto;
   margin-right: 2vw;
+  border-radius: 10px;
 }
 
 .group-content-text {
@@ -77,6 +78,7 @@
   background-color: #f6f7f8;
   border-top: 1px solid rgba(46, 62, 72, 0.12);
   border-width: thin;
+  padding-top: 1vh;
 }
 
 .group-about h2 {
@@ -85,8 +87,8 @@
   font-size: 1.5rem;
 }
 .group-about-text {
-  width: 50vw;
-  margin-bottom: 4vh;
+  width: 51vw;
+  margin-bottom: 2vh;
   max-height: 30vh;
 }
 
@@ -112,11 +114,12 @@
   margin-bottom: 3vh;
 }
 .upcoming-events {
-  padding-top: 1.5vh;
+  padding: 1vh;
   width: 50vw;
   max-height: 50vh;
   margin-bottom: 5vh;
   background-color: #ffffff;
+  border: 1px solid rgba(46, 62, 72, 0.12);
   border-radius: 15px;
   overflow: auto;
 }
@@ -129,9 +132,11 @@
 .event-row {
   display: flex;
   flex-direction: row;
-  border: solid rgb(155, 155, 155);
+  border: 1px solid rgba(46, 62, 72, 0.12);
   border-width: thin;
-  background: linear-gradient(#eeeeee, #dddddd);
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(46, 62, 72, 0.12),
+    0px 4px 12px 0px rgba(46, 62, 72, 0.12);
   border-radius: 7px;
   width: 45vw;
   height: 10vh;
@@ -140,8 +145,14 @@
   overflow: hidden;
 }
 
+.event-row:hover {
+  box-shadow: 0px 0px 4px 0px rgba(46, 62, 72, 0.3),
+    0px 4px 12px 0px rgba(46, 62, 72, 0.3);
+}
+
 .event-row img {
   width: 10vw;
+  height: auto;
 }
 .event-row-text {
   width: 30vw;
@@ -155,10 +166,16 @@
 
 .event-row-time {
   font-weight: 500;
+  font-size: 1.2rem;
+  color: rgba(46, 62, 73, 0.6);
+  padding-bottom: 0.2rem;
 }
 
 .event-row-body {
   font-weight: 400;
+  padding-top: 1.7rem;
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 

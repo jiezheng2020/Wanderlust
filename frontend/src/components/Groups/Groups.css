@@ -146,7 +146,6 @@
 .event-row-text {
   width: 30vw;
   max-height: 10vh;
-  overflow: hidden;
 }
 
 .event-row-text h4,
@@ -160,6 +159,7 @@
 
 .event-row-body {
   font-weight: 400;
+  text-overflow: ellipsis;
 }
 
 .no-groups {

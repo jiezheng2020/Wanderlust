@@ -19,7 +19,7 @@ router.get(
     const events = await EventAttendee.findAll({
       where: { userId: id },
     });
-    // return res.json(events);
+    return res.json(events);
   })
 );
 

@@ -62,8 +62,7 @@ export const getUserEvents = (id) => async (dispatch) => {
 
   if (response.ok) {
     const events = await response.json();
-    // dispatch(loadUser(events));
-    return events;
+    dispatch(loadUser(events));
   }
 };
 
@@ -142,6 +141,12 @@ const eventReducer = (state = {}, action) => {
       return {
         ...state,
         event: action.event,
+      };
+    }
+    case LOAD_USER: {
+      return {
+        ...state,
+        ...action.events,
       };
     }
     case ADD_COMMENT: {

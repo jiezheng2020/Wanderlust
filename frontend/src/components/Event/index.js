@@ -187,12 +187,14 @@ export default function Event() {
               <Link to={`/group/${event.groupId}`}>
                 <img alt="" className="event-group-img" src={groupImg} />
               </Link>
-              <div className="event-group-text">
-                <label>{event.Group.name}</label>
-                <p>Public group</p>
-              </div>
-              <div className="event-content-time">
-                <label>Event will take place on {event.detailsTime}</label>
+              <div className="event-text-container">
+                <div className="event-group-text">
+                  <label>{event.Group.name}</label>
+                  <p>Public group</p>
+                </div>
+                <div className="event-content-time">
+                  <label>Event will take place on {event.detailsTime}</label>
+                </div>
               </div>
             </div>
           </div>

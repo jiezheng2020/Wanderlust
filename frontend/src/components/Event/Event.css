@@ -84,10 +84,14 @@
   border-radius: 5px;
 }
 
-.event-group-text {
+.event-text-container {
   display: flex;
   flex-direction: column;
-  padding-left: 0.5rem;
+  justify-content: center;
+  height: 10vh;
+  margin: auto;
+}
+.event-group-text {
   font-size: 0.9rem;
 }
 
@@ -97,24 +101,11 @@
 }
 
 .event-content-time {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  height: 10vh;
-  margin-top: 5vh;
 }
 
 .event-content-time label {
-  width: fit-content;
-  height: fit-content;
   font-weight: 400;
 }
-
-/* .event-details {
-  max-width: 28vw;
-} */
 
 .event-details-p {
   white-space: pre-line;
@@ -123,7 +114,6 @@
 
 .event-attendees {
   margin-top: 1vh;
-  /* max-width: 28vw; */
 }
 
 .event-comment-title {

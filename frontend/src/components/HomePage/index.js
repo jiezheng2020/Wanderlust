@@ -20,8 +20,7 @@ export default function HomePage() {
       <div className="hero-banner">
         <div className="hero-text">
           <h1>Welcome to Wanderlust,</h1>
-          <h1>Sign up today to access</h1>
-          <h1>our features!</h1>
+          <h1>Sign up today to access our features!</h1>
 
           <div className="h3-div">
             <h3>Join a group to meet new people,</h3>

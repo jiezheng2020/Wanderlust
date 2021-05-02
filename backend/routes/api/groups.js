@@ -12,6 +12,25 @@ const {
 
 const router = express.Router();
 
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const groups = await Group.findAll();
+    return res.json(groups);
+  })
+);
+
+router.get(
+  "/user/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const groups = await GroupMember.findAll({
+      where: { userId: id },
+    });
+    return res.json(groups);
+  })
+);
+
 router.post(
   "/",
   asyncHandler(async (req, res) => {

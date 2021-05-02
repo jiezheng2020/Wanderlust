@@ -1,0 +1,93 @@
+.userprof-home {
+  margin-top: 59px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 94.2vh;
+  background: linear-gradient(#ffffff, #a5a5a5);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 50vh;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 2px 0 10px;
+  margin-top: 3vh;
+  border-radius: 15px;
+  background-image: url("./banner1.gif");
+  background-size: cover;
+}
+
+.container-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-joined-container {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: 70vh;
+  justify-content: space-between;
+}
+
+.user-groups,
+.user-events {
+  width: 38vw;
+  max-height: 60vh;
+  margin-top: 2vh;
+  background-color: rgb(255, 255, 255);
+  border: solid #afafaf;
+  border-width: thin;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.container-div h2,
+.container-div h2 {
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.user-groups-row {
+  display: flex;
+  flex-direction: row;
+  border-width: thin;
+  background: linear-gradient(#eeeeee, #dddddd);
+  border-radius: 10px;
+  width: 34vw;
+  height: 8vh;
+  margin-top: 1.5vh;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.user-groups-row img {
+  width: 7vw;
+}
+.user-row-text {
+  width: 30vw;
+  max-height: 10vh;
+  overflow: hidden;
+}
+
+.user-row-text h4,
+.user-row-text h3 {
+  margin: 0 0 0.3rem 1rem;
+}
+
+.user-row-time {
+  font-weight: 500;
+}
+
+.user-row-body {
+  font-weight: 400;
+}

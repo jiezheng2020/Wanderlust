@@ -74,7 +74,7 @@
   align-items: center;
   width: 99.1vw;
   max-height: 40vh;
-  background-color: #eeeeee;
+  background-color: #f6f7f8;
   border-top: solid #d3d3d3;
   border-width: thin;
 }
@@ -101,7 +101,7 @@
   justify-content: center;
   align-items: center;
   width: 99.1vw;
-  background-color: #eeeeee;
+  background-color: #f6f7f8;
   min-height: 38vh;
 }
 
@@ -132,7 +132,7 @@
   border: solid rgb(155, 155, 155);
   border-width: thin;
   background: linear-gradient(#eeeeee, #dddddd);
-  border-radius: 10px;
+  border-radius: 7px;
   width: 45vw;
   height: 10vh;
   margin-top: 1.5vh;

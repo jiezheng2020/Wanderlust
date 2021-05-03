@@ -5,7 +5,7 @@ import "./DemoUser.css";
 
 export default function DemoUser() {
   const dispatch = useDispatch();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     return dispatch(
       sessionActions.login({ credential: "demo@user.io", password: "password" })

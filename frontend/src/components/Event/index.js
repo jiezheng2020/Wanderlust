@@ -24,6 +24,8 @@ export default function Event() {
   const [edit, setEdit] = useState(false);
   const [updatedComment, setupdatedComment] = useState("");
   const [currentComment, setCurrentComment] = useState(-1);
+  const [numAttendees, setNumAttendees] = useState(4);
+  const [start, setStart] = useState(0);
 
   useEffect(() => {
     dispatch(getOneEvent(id));
@@ -94,6 +96,11 @@ export default function Event() {
     setjoinEvent(!joinedEvent);
   };
 
+  const increment = () => {
+    setNumAttendees(numAttendees + 4);
+    setStart(start + 4);
+  };
+
   return (
     <div className="event-page">
       <div className="event-header">
@@ -121,22 +128,23 @@ export default function Event() {
           <div className="event-attendees">
             <div className="event-attendees-header">
               <h3>{`Attendees (${event.Attendees.length})`}</h3>
-              <label>See all</label>
+              {event.Attendees.length > numAttendees && (
+                <label className="see-all" onClick={() => increment()}>
+                  See more
+                </label>
+              )}
             </div>
             <div className="attendees-container">
-              {event.Attendees.map((user, i) => {
-                if (i < 4)
-                  return (
-                    <>
-                      <div key={i} className="attendees-div">
-                        <div className="attendee-image">
-                          <img src={`${user.image}`} />
-                        </div>
-                        <label className="attendee-name">{user.username}</label>
-                      </div>
-                    </>
-                  );
-              })}
+              {event.Attendees.slice(start, numAttendees).map((user, i) => (
+                <>
+                  <div key={i} className="attendees-div">
+                    <div className="attendee-image">
+                      <img src={`${user.image}`} />
+                    </div>
+                    <label className="attendee-name">{user.username}</label>
+                  </div>
+                </>
+              ))}
             </div>
           </div>
           <h3 className="1comment-title">{`Comments(${event.Comments.length})`}</h3>

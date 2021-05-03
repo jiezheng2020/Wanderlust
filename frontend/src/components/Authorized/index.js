@@ -33,7 +33,9 @@ export default function Authorized() {
         <div className="events-content row1">
           <div className="event-text-row">
             <h1>Most Popular Events</h1>
-            <Link to="/">See All</Link>
+            <Link className="see-all" to="/events/all">
+              See All
+            </Link>
           </div>
           <div className="events-row ">
             <div className="event-item">
@@ -117,7 +119,9 @@ export default function Authorized() {
         <div className="events-content">
           <div className="event-text-row">
             <h1>More Events By {events[0].Group.name}</h1>
-            <Link to="/">See All</Link>
+            <Link className="see-all" to={`/group/${events[0].Group.id}`}>
+              See All
+            </Link>
           </div>
           <div className="events-row">
             <div className="event-item">
@@ -205,7 +209,9 @@ export default function Authorized() {
         <div className="events-content row3">
           <div className="event-text-row">
             <h1>Other Events</h1>
-            <Link to="/">See All</Link>
+            <Link className="see-all" to="/events/all">
+              See All
+            </Link>
           </div>
           <div className="events-row">
             <div className="event-item">

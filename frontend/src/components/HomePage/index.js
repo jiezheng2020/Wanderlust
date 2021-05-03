@@ -35,15 +35,15 @@ export default function HomePage() {
         <div className="link-containers">
           <div className="event-container">
             <div className="event-links event1"></div>
-            <Link to="/">Make new friends</Link>
+            <Link to="/groups/all">Make new friends</Link>
           </div>
           <div className="event-container">
             <div className="event-links event2"></div>
-            <Link to="/event/all">Explore the outdoors</Link>
+            <Link to="/events/all">Explore the outdoors</Link>
           </div>
           <div className="event-container">
             <div className="event-links event3"></div>
-            <Link to="/event/all">Explore the nightlife</Link>
+            <Link to="/events/all">Explore the nightlife</Link>
           </div>
         </div>
       </div>
@@ -58,13 +58,13 @@ export default function HomePage() {
         <div className="intro-link-containers">
           <div className="link-container">
             <img alt="" className="link-image" src={image1} />
-            <Link to="/">Join a group</Link>
+            <Link to="/groups/all">Join a group</Link>
             <p>Find a community that</p>
             <p>shares your interests!</p>
           </div>
           <div className="link-container">
             <img alt="" className="link-image" src={image2} />
-            <Link to="/">Find an event</Link>
+            <Link to="/events/all">Find an event</Link>
             <p>Events are being planned</p>
             <p>everywhere! Find a location</p>
             <p>or activity you are interested</p>
@@ -73,7 +73,7 @@ export default function HomePage() {
           </div>
           <div className="link-container">
             <img alt="" className="link-image" src={image3} />
-            <Link to="/">Start a group</Link>
+            <Link to="/login">Start a group</Link>
             <p>Gather people together</p>
             <p>and explore shared interests.</p>
           </div>

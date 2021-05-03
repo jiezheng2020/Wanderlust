@@ -198,9 +198,11 @@
   height: 15vh;
   width: 20vw;
   padding: 2rem;
-  border-radius: 15px;
-  background-color: rgb(196, 196, 196);
-  border: solid rgb(185, 185, 185);
+  background-color: #fff;
+  border: 1px solid rgba(46, 62, 72, 0.12);
   border-width: thin;
   font-weight: 600;
+  box-shadow: 0px 0px 4px 0px rgba(46, 62, 72, 0.12),
+    0px 4px 12px 0px rgba(46, 62, 72, 0.12);
+  border-radius: 7px;
 }

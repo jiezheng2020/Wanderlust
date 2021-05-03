@@ -74,4 +74,14 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { userId, groupId } = req.body;
+    const newMember = await GroupMember.destroy({ where: { groupId, userId } });
+
+    return res.json(newMember);
+  })
+);
+
 module.exports = router;

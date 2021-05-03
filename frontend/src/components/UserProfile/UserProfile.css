@@ -110,6 +110,7 @@
   color: white;
   border: none;
   font-weight: bold;
+  border-radius: 7px;
   transition: opacity 0.3s;
 }
 

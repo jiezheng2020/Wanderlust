@@ -75,6 +75,15 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { userId, eventId } = req.body;
+    const event = await EventAttendee.destroy({ where: { eventId, userId } });
+
+    return res.json(event);
+  })
+);
 router.post(
   "/:id/comment",
   asyncHandler(async (req, res) => {

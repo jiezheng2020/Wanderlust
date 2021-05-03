@@ -2,11 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import "./UserProfile.css";
-import { getEvents, getUserEvents } from "../../store/events";
-import { getGroups, getUserGroups } from "../../store/groups";
+import {
+  getEvents,
+  getUserEvents,
+  removeEventMember,
+} from "../../store/events";
+import {
+  getGroups,
+  getUserGroups,
+  removeGroupMember,
+} from "../../store/groups";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
+  const [removed, setRemoved] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
   const events = useSelector((state) => state.events.events);
 
@@ -21,10 +30,24 @@ export default function UserProfile() {
     dispatch(getUserEvents(sessionUser.id));
     dispatch(getGroups());
     dispatch(getUserGroups(sessionUser.id));
-  }, [dispatch]);
+  }, [dispatch, removed]);
 
-  const leaveBtn = (groupId) => {
-    console.log(groupId);
+  const GroupleaveBtn = async (groupId) => {
+    const payload = {
+      groupId: groupId,
+      userId: sessionUser.id,
+    };
+    await dispatch(removeGroupMember(payload));
+    setRemoved(!removed);
+  };
+
+  const EventleaveBtn = async (eventId) => {
+    const payload = {
+      eventId: eventId,
+      userId: sessionUser.id,
+    };
+    await dispatch(removeEventMember(payload));
+    setRemoved(!removed);
   };
   if (!sessionUser) return <Redirect to="/"></Redirect>;
   if (!events || !userEvents || !groups || !userGroups) return null;
@@ -43,8 +66,6 @@ export default function UserProfile() {
       userGroupsArray.includes(group.id) || group.organizerId === sessionUser.id
   );
 
-  console.log(sessionUser);
-
   return (
     <div className="userprof-home">
       <div className="user-info">
@@ -61,7 +82,7 @@ export default function UserProfile() {
                   <div className="leave-container">
                     <button
                       className="leave-btn"
-                      onClick={() => leaveBtn(group.id)}
+                      onClick={() => GroupleaveBtn(group.id)}
                     >
                       Leave
                     </button>
@@ -91,7 +112,12 @@ export default function UserProfile() {
               return (
                 <>
                   <div className="leave-container">
-                    <button className="leave-btn">Leave</button>
+                    <button
+                      className="leave-btn"
+                      onClick={() => EventleaveBtn(event.id)}
+                    >
+                      Leave
+                    </button>
                   </div>
                   <Link key={i} to={`/event/${event.id}`}>
                     <div className="user-groups-row">

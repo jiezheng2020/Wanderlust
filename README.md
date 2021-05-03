@@ -31,7 +31,7 @@
 
 ## Code Highlights
 
-<img src=''>
+<img src='frontend/public/Animation.gif'>
 
 ## Future Implementations
 - Ability for owner to delete an event/group that is tied to other events/groups by foreign key

@@ -6,10 +6,10 @@ function Footer() {
     <div className="footer">
       <div className="footer-links">
         <a href="https://github.com/jiezheng2020">
-          <i class="fab fa-github-square"></i>
+          <i className="fab fa-github-square"></i>
         </a>
         <a href="https://www.linkedin.com/in/kevin-zheng-1387a7138/">
-          <i class="fab fa-linkedin"></i>
+          <i className="fab fa-linkedin"></i>
         </a>
       </div>
     </div>

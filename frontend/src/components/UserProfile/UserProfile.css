@@ -110,10 +110,20 @@
   color: white;
   border: none;
   font-weight: bold;
-  border-radius: 7px;
   transition: opacity 0.3s;
 }
 
 .leave-btn:hover {
   opacity: 1;
+}
+
+.leave-container {
+  position: relative;
+  display: flex;
+  top: 5vh;
+  right: 1vw;
+  width: 100%;
+  flex-direction: row;
+  margin-right: 1vw;
+  justify-content: flex-end;
 }

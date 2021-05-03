@@ -41,6 +41,7 @@ function App() {
           <Route path="/user-profile">
             <UserProfile />
           </Route>
+          <Route exact path="/event/all"></Route>
         </Switch>
       )}
       <Footer />

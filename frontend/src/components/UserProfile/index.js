@@ -6,11 +6,13 @@ import {
   getEvents,
   getUserEvents,
   removeEventMember,
+  removeEvent,
 } from "../../store/events";
 import {
   getGroups,
   getUserGroups,
   removeGroupMember,
+  removeGroup,
 } from "../../store/groups";
 
 export default function UserProfile() {
@@ -41,12 +43,28 @@ export default function UserProfile() {
     setRemoved(!removed);
   };
 
+  const GroupdeleteBtn = async (groupId) => {
+    const payload = {
+      groupId: groupId,
+    };
+    await dispatch(removeGroup(payload));
+    setRemoved(!removed);
+  };
+
   const EventleaveBtn = async (eventId) => {
     const payload = {
       eventId: eventId,
       userId: sessionUser.id,
     };
     await dispatch(removeEventMember(payload));
+    setRemoved(!removed);
+  };
+
+  const EventdeleteBtn = async (eventId) => {
+    const payload = {
+      eventId: eventId,
+    };
+    await dispatch(removeEvent(payload));
     setRemoved(!removed);
   };
   if (!sessionUser) return <Redirect to="/"></Redirect>;
@@ -80,12 +98,22 @@ export default function UserProfile() {
               return (
                 <>
                   <div className="leave-container">
-                    <button
-                      className="leave-btn"
-                      onClick={() => GroupleaveBtn(group.id)}
-                    >
-                      Leave
-                    </button>
+                    {group.organizerId !== sessionUser.id && (
+                      <button
+                        className="leave-btn"
+                        onClick={() => GroupleaveBtn(group.id)}
+                      >
+                        Leave
+                      </button>
+                    )}
+                    {group.organizerId === sessionUser.id && (
+                      <button
+                        className="leave-btn"
+                        onClick={() => GroupdeleteBtn(group.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
                   </div>
                   <Link key={i} to={`/group/${group.id}`}>
                     <div className="user-groups-row">
@@ -112,12 +140,22 @@ export default function UserProfile() {
               return (
                 <>
                   <div className="leave-container">
-                    <button
-                      className="leave-btn"
-                      onClick={() => EventleaveBtn(event.id)}
-                    >
-                      Leave
-                    </button>
+                    {sessionUser.id !== event.hostId && (
+                      <button
+                        className="leave-btn"
+                        onClick={() => EventleaveBtn(event.id)}
+                      >
+                        Leave
+                      </button>
+                    )}
+                    {sessionUser.id === event.hostId && (
+                      <button
+                        className="leave-btn"
+                        onClick={() => EventdeleteBtn(event.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
                   </div>
                   <Link key={i} to={`/event/${event.id}`}>
                     <div className="user-groups-row">

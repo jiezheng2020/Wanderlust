@@ -72,6 +72,19 @@ export const removeGroupMember = (payload) => async (dispatch) => {
   }
 };
 
+export const removeGroup = (payload) => async (dispatch) => {
+  const { groupId } = payload;
+  const response = await csrfFetch(`/api/group/${groupId}/owned`, {
+    method: "DELETE",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    await response.json();
+  }
+};
+
 export const addNewGroup = (payload) => async (dispatch) => {
   const response = await csrfFetch(`/api/group/`, {
     method: "POST",

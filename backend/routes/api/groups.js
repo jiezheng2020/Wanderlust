@@ -84,4 +84,14 @@ router.delete(
   })
 );
 
+router.delete(
+  "/:id/owned",
+  asyncHandler(async (req, res) => {
+    const { groupId } = req.body;
+    const group = await Group.destroy({ where: { id: groupId } });
+
+    return res.json(group);
+  })
+);
+
 module.exports = router;

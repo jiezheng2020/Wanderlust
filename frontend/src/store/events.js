@@ -89,6 +89,19 @@ export const removeEventMember = (payload) => async (dispatch) => {
   }
 };
 
+export const removeEvent = (payload) => async (dispatch) => {
+  const { eventId } = payload;
+  const response = await csrfFetch(`/api/event/${eventId}/owned`, {
+    method: "DELETE",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    await response.json();
+  }
+};
+
 export const removeComment = (payload) => async (dispatch) => {
   const { eventId, commentId, index } = payload;
   const response = await csrfFetch(`/api/event/${eventId}/comment`, {

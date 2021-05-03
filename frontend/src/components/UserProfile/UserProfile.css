@@ -91,11 +91,29 @@
 .user-row-text h3 {
   margin: 0 0 0.3rem 1rem;
 }
-
+.user-row-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .user-row-time {
   font-weight: 500;
 }
 
 .user-row-body {
   font-weight: 400;
+}
+
+.leave-btn {
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 7px;
+  transition: opacity 0.3s;
+}
+
+.leave-btn:hover {
+  opacity: 1;
 }

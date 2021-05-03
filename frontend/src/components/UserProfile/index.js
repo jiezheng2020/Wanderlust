@@ -58,7 +58,10 @@ export default function UserProfile() {
                   <div className="user-groups-row">
                     <img alt="" src={group.image} />
                     <div className="user-row-text">
-                      <h4 className="user-row-time">{group.location}</h4>
+                      <div className="user-row-header">
+                        <h4 className="user-row-time">{group.location}</h4>
+                        <button className="leave-btn">Leave</button>
+                      </div>
                       <h3>{group.name}</h3>
                       <h4 className="user-row-body">{group.description}</h4>
                     </div>
@@ -78,7 +81,10 @@ export default function UserProfile() {
                   <div className="user-groups-row">
                     <img alt="" src={event.image} />
                     <div className="user-row-text">
-                      <h4 className="user-row-time">{event.detailsTime}</h4>
+                      <div className="user-row-header">
+                        <h4 className="user-row-time">{event.detailsTime}</h4>
+                        <button className="leave-btn">Leave</button>
+                      </div>
                       <h3>{event.name}</h3>
                       <h4 className="user-row-body">{event.detailsBody}</h4>
                     </div>

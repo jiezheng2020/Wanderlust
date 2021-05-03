@@ -27,9 +27,7 @@ export default function HomePage() {
             <h3>find a community, and travel together!</h3>
           </div>
         </div>
-        <div className="image-container">
-          <div className="hero-image" />
-        </div>
+        <div className="hero-image" />
       </div>
       <div className="home-links">
         <div className="link-containers">

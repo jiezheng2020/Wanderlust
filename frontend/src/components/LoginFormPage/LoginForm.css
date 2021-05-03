@@ -13,8 +13,9 @@
   border-radius: 15px;
   background-color: white;
   flex-direction: column;
-  width: 25vw;
-  height: 35vh;
+  justify-content: center;
+  width: 30rem;
+  height: 25rem;
   align-items: center;
 }
 

@@ -34,6 +34,7 @@ div#modal-content {
   border-width: thin;
   padding-top: 10px;
   color: black;
+  font-size: 15px;
 }
 
 .signup-btn {

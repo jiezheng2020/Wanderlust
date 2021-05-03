@@ -69,6 +69,7 @@
   border-width: thin;
   padding-top: 15px;
   color: black;
+  font-size: 15px;
 }
 
 .user-input:hover {

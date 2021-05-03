@@ -198,6 +198,10 @@
   margin: 1rem 0;
 }
 
+.see-all:hover {
+  cursor: pointer;
+}
+
 .comment-submit {
   display: flex;
   flex-direction: column;

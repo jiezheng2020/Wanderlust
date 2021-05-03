@@ -128,7 +128,7 @@ export default function Event() {
                 if (i < 4)
                   return (
                     <>
-                      <div className="attendees-div">
+                      <div key={i} className="attendees-div">
                         <div className="attendee-image">
                           <img src={`${user.image}`} />
                         </div>

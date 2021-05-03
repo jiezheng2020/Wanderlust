@@ -5,7 +5,9 @@ import LoginFormPage from "./components/LoginFormPage";
 import HomePage from "./components/HomePage";
 import Authorized from "./components/Authorized";
 import Event from "./components/Event";
+import AllEvents from "./components/AllEvents";
 import Groups from "./components/Groups";
+import AllGroups from "./components/AllGroups";
 import UserProfile from "./components/UserProfile";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -26,22 +28,27 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/authorized">
+          <Route exact path="/authorized">
             <Authorized />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/event/:id">
+          <Route exact path="/event/:id">
             <Event />
           </Route>
-          <Route path="/group/:id">
+          <Route exact path="/group/:id">
             <Groups />
           </Route>
-          <Route path="/user-profile">
+          <Route exact path="/user-profile">
             <UserProfile />
           </Route>
-          <Route exact path="/event/all"></Route>
+          <Route exact path="/events/all">
+            <AllEvents />
+          </Route>
+          <Route exact path="/groups/all">
+            <AllGroups />
+          </Route>
         </Switch>
       )}
       <Footer />

@@ -43,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "userId",
       as: "Attendees",
       onDelete: "CASCADE",
+      hooks: true,
     });
     Event.belongsToMany(models.Group, {
       through: "GroupCalendar",

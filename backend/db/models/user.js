@@ -77,6 +77,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "eventId",
       as: "Attendees",
       onDelete: "CASCADE",
+      hooks: true,
     });
   };
 

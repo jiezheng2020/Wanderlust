@@ -1,0 +1,43 @@
+.all-events-page {
+  margin-top: 59px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f7f8;
+}
+
+.all-events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 150vh;
+  margin-bottom: 5vh;
+}
+
+.load-container {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-more {
+  background-color: #ed1c40;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 7px;
+  transition: opacity 0.3s;
+  padding: 0.5rem;
+}
+
+.load-more:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.user-groups-row:hover {
+  cursor: pointer;
+}

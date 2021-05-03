@@ -39,11 +39,11 @@ export default function HomePage() {
           </div>
           <div className="event-container">
             <div className="event-links event2"></div>
-            <Link to="/">Explore the outdoors</Link>
+            <Link to="/event/all">Explore the outdoors</Link>
           </div>
           <div className="event-container">
             <div className="event-links event3"></div>
-            <Link to="/">Explore the nightlife</Link>
+            <Link to="/event/all">Explore the nightlife</Link>
           </div>
         </div>
       </div>

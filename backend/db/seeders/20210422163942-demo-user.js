@@ -9,6 +9,7 @@ module.exports = {
         email: "demo@user.io",
         username: "Demo-lition",
         hashedPassword: bcrypt.hashSync("password"),
+        image: faker.image.avatar(),
       },
     ];
 
@@ -17,6 +18,7 @@ module.exports = {
         email: faker.internet.email(),
         username: `FakeUser${i}`,
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        image: faker.image.avatar(),
       };
       UserData.push(newUser);
     }

@@ -142,7 +142,6 @@
   margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .attendees-div {
@@ -153,6 +152,7 @@
     0px 4px 12px 0px rgba(46, 62, 72, 0.12);
   border-radius: 7px;
   display: flex;
+  margin-right: 1rem;
   flex-direction: column;
   align-items: center;
 }

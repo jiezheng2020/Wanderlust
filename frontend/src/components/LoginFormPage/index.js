@@ -53,7 +53,7 @@ function LoginFormPage() {
             Log in
           </button>
         </div>
-        {errors.length && (
+        {errors.length !== 0 && (
           <div className="login-errors">
             <ul>
               {errors.map((error, idx) => (

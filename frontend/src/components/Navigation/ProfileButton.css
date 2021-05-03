@@ -46,6 +46,7 @@
   margin-right: 1rem;
   margin-top: 0.25rem;
   transition: opacity 0.3s;
+  max-width: 6vw;
 }
 
 .logout-btn {

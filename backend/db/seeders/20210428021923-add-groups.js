@@ -23,7 +23,7 @@ module.exports = {
         location: randlocation,
         organizerId: randId,
         description: faker.lorem.paragraphs(),
-        image: faker.image.nightlife(),
+        image: faker.image.image(),
       };
       GroupsData.push(newGroup);
     }

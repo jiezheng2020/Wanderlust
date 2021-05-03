@@ -5,7 +5,7 @@
 ### **Live Link: [Wanderlust](https://wanderlst.herokuapp.com)**
 
 ## Starting Development
-- Check out our [Wiki](https://github.com/jiezheng2020/Wandlust/wiki) Documentation for more details on features and API documentation!
+- Check out my [Wiki](https://github.com/jiezheng2020/Wandlust/wiki) Documentation for more details on features and API documentation!
 
 ## Technologies 
 #### Front-End

@@ -19,6 +19,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       organizerId: { type: DataTypes.INTEGER, allowNull: false },
       description: { type: DataTypes.TEXT, allowNull: false },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [3, 100],
+        },
+      },
     },
     {}
   );

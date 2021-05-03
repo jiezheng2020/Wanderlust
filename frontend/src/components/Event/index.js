@@ -121,8 +121,14 @@ export default function Event() {
           </div>
           <div className="event-attendees">
             <h3>{`Attendees (${event.Attendees.length})`}</h3>
+            <div className="attendees-container">
+              <div className="attendees-div">Attendees1</div>
+              <div className="attendees-div">Attendees1</div>
+              <div className="attendees-div">Attendees1</div>
+              <div className="attendees-div">Attendees1</div>
+            </div>
           </div>
-          <h3 className="event-comment-title">{`Comments(${event.Comments.length})`}</h3>
+          <h3 className="1comment-title">{`Comments(${event.Comments.length})`}</h3>
           <div className="event-comments">
             {event.Comments?.map((comment, i) => {
               return (

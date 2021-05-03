@@ -22,6 +22,12 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      image: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+        defaultValue:
+          "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

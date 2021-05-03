@@ -1,4 +1,4 @@
-# <img src="public/favicon.ico" width="25" height="25"> Welcome to WanderLust!
+# <img src="frontend/public/favicon.ico" width="25" height="25"> Welcome to WanderLust!
 
 [WanderLust](https://wanderlst.herokuapp.com/), a [MeetUp](https://www.meetup.com/) inspired project, is a platform for travelers to find and build communities. Users will be able to search for events and groups that interest them. Wanderlust's vision is to combine traveling and meeting new people to inspire learning new things, finding support, and getting out of their comfort zones.
 

@@ -119,12 +119,24 @@ export default function Event() {
             <p className="event-details-p">{event.detailsBody}</p>
           </div>
           <div className="event-attendees">
-            <h3>{`Attendees (${event.Attendees.length})`}</h3>
+            <div className="event-attendees-header">
+              <h3>{`Attendees (${event.Attendees.length})`}</h3>
+              <label>See all</label>
+            </div>
             <div className="attendees-container">
-              <div className="attendees-div">Attendees1</div>
-              <div className="attendees-div">Attendees1</div>
-              <div className="attendees-div">Attendees1</div>
-              <div className="attendees-div">Attendees1</div>
+              {event.Attendees.map((user, i) => {
+                if (i < 4)
+                  return (
+                    <>
+                      <div className="attendees-div">
+                        <div className="attendee-image">
+                          <img src={`${user.image}`} />
+                        </div>
+                        <label className="attendee-name">{user.username}</label>
+                      </div>
+                    </>
+                  );
+              })}
             </div>
           </div>
           <h3 className="1comment-title">{`Comments(${event.Comments.length})`}</h3>

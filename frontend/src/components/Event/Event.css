@@ -127,12 +127,53 @@
   margin-top: 1vh;
 }
 
+.event-attendees-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-attendees-header label {
+  font-weight: 500;
+}
 .attendees-container {
-  background-color: red;
   width: 100%;
   height: 20vh;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.attendees-div {
+  height: 100%;
+  width: 22%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 4px 0px rgba(46, 62, 72, 0.12),
+    0px 4px 12px 0px rgba(46, 62, 72, 0.12);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attendee-image {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attendee-image img {
+  border-radius: 100%;
+  width: 50%;
+  height: auto;
+}
+
+.attendee-name {
+  margin-top: 1rem;
+  font-weight: 500;
 }
 
 .event-comment-title {

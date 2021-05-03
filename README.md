@@ -38,3 +38,4 @@
 - Ability to filter events by time, location, name
 - Search bar
 - Refactor backend for easier to manipulate stores
+- Responsive to smaller screen sizes

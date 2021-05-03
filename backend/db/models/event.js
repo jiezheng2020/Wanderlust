@@ -16,11 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       image: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          len: [3, 100],
-        },
       },
       groupId: { type: DataTypes.INTEGER, allowNull: false },
       hostId: { type: DataTypes.INTEGER, allowNull: false },

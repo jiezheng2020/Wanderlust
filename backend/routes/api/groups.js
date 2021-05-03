@@ -40,6 +40,8 @@ router.post(
       location,
       organizerId,
       description,
+      image:
+        "https://media.istockphoto.com/vectors/portrait-of-business-team-standing-together-multiracial-business-vector-id1151939169?k=6&m=1151939169&s=612x612&w=0&h=jHxk3XMAVOb6x2sW36oaaplVvPrjuVOmckQYMYE3EDo=",
     });
 
     return res.json(newGroup);
